@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<!-- saved from url=(0253)file:///Users/thitichaya/Library/Application%20Support/Claude/local-agent-mode-sessions/7d861cbf-2ef8-4de4-8562-af184d161b2e/76e724cd-40fd-4389-a51e-ea369f926f10/local_597eab65-dd61-4c7f-b198-3c11b99fb0bd/outputs/daily-skill-plugin-audit-2026-04-14.html -->
+<html lang="th"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Skill/Plugin/MCP Audit — 14 April 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+  :root {
+    --bg-primary:    #1c1c1e;
+    --bg-secondary:  #2c2c2e;
+    --bg-tertiary:   #3a3a3c;
+    --bg-elevated:   #242426;
+    --separator:     rgba(255,255,255,0.09);
+    --lbl-primary:   #ffffff;
+    --lbl-secondary: rgba(235,235,245,0.6);
+    --lbl-tertiary:  rgba(235,235,245,0.28);
+    --blue:   #0a84ff;
+    --green:  #30d158;
+    --yellow: #ffd60a;
+    --red:    #ff453a;
+    --orange: #ff9f0a;
+    --purple: #bf5af2;
+    --teal:   #5ac8fa;
+    --tl-r:   #ff5f57;
+    --tl-y:   #febc2e;
+    --tl-g:   #28c840;
+    --r-sm: 6px; --r-md: 10px; --r-lg: 14px; --r-xl: 18px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system,'Inter',BlinkMacSystemFont,'Helvetica Neue',sans-serif;
+    background: var(--bg-primary);
+    color: var(--lbl-primary);
+    min-height: 100vh;
+    padding: 24px;
+    font-size: 13px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .window {
+    background: var(--bg-secondary);
+    border-radius: var(--r-xl);
+    box-shadow: 0 8px 40px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,255,255,.07);
+    overflow: hidden;
+    max-width: 1540px;
+    margin: 0 auto;
+  }
+  /* ── Titlebar ── */
+  .titlebar {
+    background: var(--bg-elevated);
+    padding: 14px 20px 12px;
+    display: flex; align-items: center; gap: 14px;
+    border-bottom: 1px solid var(--separator);
+    position: sticky; top:0; z-index:100;
+    backdrop-filter: blur(20px);
+  }
+  .tlights { display:flex; gap:7px; flex-shrink:0; }
+  .tl { width:12px; height:12px; border-radius:50%; cursor:default; box-shadow:0 0 0 .5px rgba(0,0,0,.25); }
+  .tl-r { background:var(--tl-r); }
+  .tl-y { background:var(--tl-y); }
+  .tl-g { background:var(--tl-g); }
+  .ttl { flex:1; text-align:center; font-size:13px; font-weight:500; color:var(--lbl-secondary); letter-spacing:.01em; }
+  .ttl-r { font-size:11px; color:var(--lbl-tertiary); white-space:nowrap; }
+  /* ── Content ── */
+  .content { padding: 24px; }
+  /* ── Header ── */
+  .ph h1 { font-size:22px; font-weight:700; letter-spacing:-.3px; margin-bottom:4px; display:flex; align-items:center; gap:8px; }
+  .ph .meta { font-size:12px; color:var(--lbl-secondary); margin-bottom:24px; }
+  /* ── Stats ── */
+  .stats { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-bottom:20px; max-width:620px; margin-left:auto; margin-right:auto; }
+  .sc {
+    background:var(--bg-tertiary); border-radius:var(--r-lg);
+    border:1px solid var(--separator); padding:16px 18px;
+    position:relative; overflow:hidden;
+  }
+  .sc::before { content:''; position:absolute; top:0;left:0;right:0; height:2px; border-radius:var(--r-lg) var(--r-lg) 0 0; }
+  .sc.blue::before{background:var(--blue);} .sc.green::before{background:var(--green);}
+  .sc .num { font-size:32px; font-weight:700; line-height:1; margin-bottom:4px; letter-spacing:-1px; }
+  .sc.blue .num{color:var(--blue);} .sc.green .num{color:var(--green);}
+  .sc .lbl { font-size:11.5px; color:var(--lbl-secondary); font-weight:500; }
+  /* ── Notice ── */
+  .notice {
+    background:rgba(10,132,255,.1); border:1px solid rgba(10,132,255,.22);
+    border-radius:var(--r-md); padding:11px 15px; margin-bottom:22px;
+    font-size:12.5px; color:rgba(235,235,245,.75); display:flex; gap:8px;
+  }
+  /* ── Section header ── */
+  .sh {
+    display:flex; align-items:center; gap:8px;
+    margin:26px 0 14px; font-size:15px; font-weight:600;
+  }
+  .sh::after { content:''; flex:1; height:1px; background:var(--separator); }
+  /* ── Table ── */
+  .tw { background:var(--bg-tertiary); border-radius:var(--r-lg); border:1px solid var(--separator); overflow-x:auto; margin-bottom:24px; }
+  table { width:100%; border-collapse:collapse; min-width:1100px; }
+  thead { background:var(--bg-elevated); }
+  th { padding:10px 11px; text-align:left; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--lbl-secondary); border-bottom:1px solid var(--separator); white-space:nowrap; }
+  td { padding:10px 11px; border-bottom:1px solid rgba(255,255,255,.045); vertical-align:top; font-size:12px; }
+  tr:last-child td { border-bottom:none; }
+  tr:hover td { background:rgba(255,255,255,.025); }
+  .tn { font-weight:600; font-size:12.5px; margin-bottom:2px; }
+  .td { font-size:11.5px; color:var(--lbl-secondary); line-height:1.45; }
+  code { background:rgba(255,255,255,.08); padding:1px 5px; border-radius:4px; font-family:'SF Mono','Fira Code',monospace; font-size:10.5px; color:var(--teal); }
+  a { color:var(--blue); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  .sec-link { font-size:10.5px; display:block; margin-top:3px; }
+  .sec-note { font-size:10.5px; color:var(--lbl-secondary); margin-top:3px; line-height:1.4; }
+  /* ── Badges ── */
+  .b { display:inline-flex; align-items:center; gap:3px; padding:2px 8px; border-radius:999px; font-size:10.5px; font-weight:600; white-space:nowrap; }
+  .bm  { background:rgba(48,209,88,.14);  color:var(--green);  border:1px solid rgba(48,209,88,.2); }
+  .bp  { background:rgba(191,90,242,.14); color:var(--purple); border:1px solid rgba(191,90,242,.2); }
+  .bsf { background:rgba(48,209,88,.12);  color:var(--green);  border:1px solid rgba(48,209,88,.2); }
+  .bcw { background:rgba(255,159,10,.12); color:var(--orange); border:1px solid rgba(255,159,10,.2); }
+  .bne { background:rgba(48,209,88,.12);  color:var(--green);  border:1px solid rgba(48,209,88,.2); }
+  /* ── Popularity ── */
+  .pop { font-weight:700; font-size:13px; white-space:nowrap; text-align:right; }
+  .pop-hi { color:var(--yellow); }
+  .pop-md { color:var(--blue); }
+  .pop-lo { color:var(--lbl-secondary); }
+  .pop-src { display:block; font-size:9.5px; font-weight:400; color:var(--lbl-tertiary); margin-top:2px; text-align:right; }
+  /* ── Priority ── */
+  .pr { display:inline-flex; align-items:center; font-size:10px; font-weight:700; padding:2px 7px; border-radius:999px; }
+  .p1 { background:rgba(255,69,58,.17);  color:var(--red); }
+  .p2 { background:rgba(255,159,10,.17); color:var(--orange); }
+  .p3 { background:rgba(10,132,255,.17); color:var(--blue); }
+  .p4 { background:rgba(142,142,147,.14); color:#8e8e93; }
+  /* ── Row num ── */
+  .rn { width:26px; height:26px; border-radius:50%; background:var(--bg-primary); display:inline-flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:var(--lbl-secondary); }
+  /* ── Priority grid ── */
+  .pg { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:24px; }
+  .pb { background:var(--bg-tertiary); border-radius:var(--r-lg); border:1px solid var(--separator); padding:15px 18px; position:relative; overflow:hidden; }
+  .pb::before { content:''; position:absolute; top:0;left:0;right:0; height:2px; }
+  .pb1::before{background:linear-gradient(90deg,var(--red),var(--orange));}
+  .pb2::before{background:linear-gradient(90deg,var(--orange),var(--yellow));}
+  .pb3::before{background:linear-gradient(90deg,var(--blue),var(--teal));}
+  .pb4::before{background:linear-gradient(90deg,#636366,#48484a);}
+  .pb h3 { font-size:12px; font-weight:700; margin-bottom:9px; display:flex; align-items:center; gap:6px; }
+  .pb ul { list-style:none; display:flex; flex-direction:column; gap:4px; }
+  .pb li { font-size:11.5px; color:var(--lbl-secondary); display:flex; align-items:baseline; gap:6px; }
+  .pb li::before { content:'\203A'; color:var(--blue); font-weight:700; flex-shrink:0; }
+  /* ── Env block ── */
+  .eb { background:var(--bg-tertiary); border-radius:var(--r-lg); border:1px solid var(--separator); padding:15px 18px; margin-bottom:14px; }
+  .eb h3 { font-size:11px; font-weight:700; margin-bottom:9px; color:var(--lbl-secondary); text-transform:uppercase; letter-spacing:.06em; }
+  .etags { display:flex; flex-wrap:wrap; gap:6px; }
+  .et { background:rgba(255,255,255,.06); border:1px solid var(--separator); border-radius:var(--r-sm); padding:3px 10px; font-size:11.5px; color:var(--lbl-secondary); }
+  /* ── Footer ── */
+  .footer { margin-top:22px; padding-top:14px; border-top:1px solid var(--separator); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+  .footer p, .footer a { font-size:10.5px; color:var(--lbl-tertiary); }
+  .footer a:hover { color:var(--blue); }
+  .fn { font-size:10px; color:var(--lbl-tertiary); margin-top:8px; line-height:1.5; }
+</style>
+</head>
+<body>
+<div class="window">
+
+  <!-- Titlebar -->
+  <div class="titlebar">
+    <div class="tlights"><div class="tl tl-r"></div><div class="tl tl-y"></div><div class="tl tl-g"></div></div>
+    <div class="ttl">🔍 Daily Skill / Plugin / MCP Audit — natty-ai-assistant</div>
+    <div class="ttl-r">14 Apr 2026 · Cowork</div>
+  </div>
+
+  <div class="content">
+    <!-- Header -->
+    <div class="ph">
+      <h1>📦 Daily Plugin Audit Report</h1>
+      <p class="meta">สร้างอัตโนมัติโดย scheduled task · สำหรับ @Thitichaya · QA Team Lead, Tech Education · SkillLane</p>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats">
+      <div class="sc blue"><div class="num">25</div><div class="lbl">Tools Researched</div></div>
+      <div class="sc green"><div class="num">25</div><div class="lbl">Verified &amp; Installed</div></div>
+    </div>
+
+    <!-- Main Table -->
+    <div class="sh">📊 Top 25 Tools — Full Audit Table <span style="font-size:11px;color:var(--lbl-tertiary);font-weight:400;margin-left:8px">เรียงตาม Popularity สูงสุด → ต่ำสุด</span></div>
+
+    <div class="tw">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:32px">#</th>
+            <th>Tool / Highlights</th>
+            <th style="width:82px">Type</th>
+            <th style="width:90px">Popularity ⭐</th>
+            <th style="width:110px">Provider</th>
+            <th style="width:120px">Install</th>
+            <th style="width:195px">Security Checked ✅</th>
+            <th style="width:105px">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+
+<!-- 1 PostgreSQL MCP — 83.7k -->
+<tr>
+  <td><div class="rn">1</div></td>
+  <td>
+    <div class="tn">🐘 PostgreSQL MCP</div>
+    <div class="td">Natural language → SQL — query ภาษาธรรมชาติ ดู schema, run reports, analyze data</div>
+    <div style="margin-top:5px"><span class="pr p3">P3 Medium</span></div>
+  </td>
+  <td><span class="b bm">MCP Server</span></td>
+  <td><div class="pop pop-hi">83.7k<span class="pop-src">GitHub ⭐</span></div></td>
+  <td style="font-size:11.5px">MCP Official</td>
+  <td><a href="https://github.com/modelcontextprotocol/servers">modelcontextprotocol/servers</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/modelcontextprotocol/servers">Official MCP Servers Repo</a>
+    <span class="sec-note">Official MCP repository by Anthropic, audited, ไม่พบ CVE</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 2 Playwright MCP — 30.8k -->
+<tr>
+  <td><div class="rn">2</div></td>
+  <td>
+    <div class="tn">🎭 Playwright MCP</div>
+    <div class="td">E2E browser automation &amp; testing จาก Claude โดยตรง — headless/headed, screenshots, form interaction, network interception</div>
+    <div style="margin-top:5px"><span class="pr p1">P1 Critical</span></div>
+  </td>
+  <td><span class="b bm">MCP Server</span></td>
+  <td><div class="pop pop-hi">30.8k<span class="pop-src">GitHub ⭐</span></div></td>
+  <td style="font-size:11.5px">Microsoft</td>
+  <td><a href="https://github.com/microsoft/playwright-mcp">github.com/microsoft/playwright-mcp</a><br><code style="font-size:9.5px">npx @playwright/mcp@latest</code></td>
+  <td>
+    <span class="b bsf">✅ Safe (patched)</span>
+    <a class="sec-link" href="https://github.com/JLLeitschuh/security-research/security/advisories/GHSA-8rgw-6xp9-2fg3">GHSA-8rgw-6xp9-2fg3 — CVE-2025-9611</a>
+    <span class="sec-note">DNS Rebinding ถูก patch ใน v0.0.40+ แล้ว ใช้ latest version ปลอดภัยค่ะ</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 3 GitHub MCP — 28.8k -->
+<tr>
+  <td><div class="rn">3</div></td>
+  <td>
+    <div class="tn">🐙 GitHub MCP</div>
+    <div class="td">จัดการ repos, PRs, issues, CI/CD, code review ได้จาก Claude — full read/write GitHub API</div>
+    <div style="margin-top:5px"><span class="pr p1">P1 Critical</span></div>
+  </td>
+  <td><span class="b bm">MCP Server</span></td>
+  <td><div class="pop pop-hi">28.8k<span class="pop-src">GitHub ⭐</span></div></td>
+  <td style="font-size:11.5px">GitHub / Anthropic</td>
+  <td><a href="https://claude.com/plugins">claude.com/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe (patched)</span>
+    <a class="sec-link" href="https://thehackernews.com/2026/01/three-flaws-in-anthropic-mcp-git-server.html">CVE-2025-68143 / 68144 / 68145</a>
+    <span class="sec-note">3 flaws ถูก patch แล้วตั้งแต่ Dec 2025 ใช้ version หลัง 2025.12.18</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 4 feature-dev Plugin — 16.8k -->
+<tr>
+  <td><div class="rn">4</div></td>
+  <td>
+    <div class="tn">🛠 feature-dev Plugin</div>
+    <div class="td">Anthropic official — guided workflow พัฒนา feature ตั้งแต่ spec → implementation → test ครบ lifecycle</div>
+    <div style="margin-top:5px"><span class="pr p2">P2 High</span></div>
+  </td>
+  <td><span class="b bp">Plugin</span></td>
+  <td><div class="pop pop-hi">16.8k<span class="pop-src">GitHub ⭐ *</span></div></td>
+  <td style="font-size:11.5px">Anthropic</td>
+  <td><a href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins">claude-plugins-official/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins">Anthropic First-Party Plugin</a>
+    <span class="sec-note">Built &amp; maintained โดย Anthropic โดยตรง, ไม่มี external dependencies</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 5 code-review Plugin — 16.8k -->
+<tr>
+  <td><div class="rn">5</div></td>
+  <td>
+    <div class="tn">👀 code-review Plugin</div>
+    <div class="td">Anthropic official — automated code review ตรวจ security, performance, correctness พร้อม diff view</div>
+    <div style="margin-top:5px"><span class="pr p2">P2 High</span></div>
+  </td>
+  <td><span class="b bp">Plugin</span></td>
+  <td><div class="pop pop-hi">16.8k<span class="pop-src">GitHub ⭐ *</span></div></td>
+  <td style="font-size:11.5px">Anthropic</td>
+  <td><a href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins">claude-plugins-official/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins">Anthropic First-Party Plugin</a>
+    <span class="sec-note">Built &amp; maintained โดย Anthropic โดยตรง</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 6 claude-md-management Plugin — 16.8k -->
+<tr>
+  <td><div class="rn">6</div></td>
+  <td>
+    <div class="tn">📄 claude-md-management Plugin</div>
+    <div class="td">Anthropic official — อัปเดต CLAUDE.md อัตโนมัติ เหมาะสำหรับ Context Engineering workflow</div>
+    <div style="margin-top:5px"><span class="pr p2">P2 High</span></div>
+  </td>
+  <td><span class="b bp">Plugin</span></td>
+  <td><div class="pop pop-hi">16.8k<span class="pop-src">GitHub ⭐ *</span></div></td>
+  <td style="font-size:11.5px">Anthropic</td>
+  <td><a href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins">claude-plugins-official/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins">Anthropic First-Party Plugin</a>
+    <span class="sec-note">Built &amp; maintained โดย Anthropic โดยตรง</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 7 hookify Plugin — 16.8k -->
+<tr>
+  <td><div class="rn">7</div></td>
+  <td>
+    <div class="tn">🪝 hookify Plugin</div>
+    <div class="td">Anthropic official — จัดการ git hooks อัตโนมัติ pre-commit, pre-push, lint, test</div>
+    <div style="margin-top:5px"><span class="pr p3">P3 Medium</span></div>
+  </td>
+  <td><span class="b bp">Plugin</span></td>
+  <td><div class="pop pop-hi">16.8k<span class="pop-src">GitHub ⭐ *</span></div></td>
+  <td style="font-size:11.5px">Anthropic</td>
+  <td><a href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins">claude-plugins-official/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins">Anthropic First-Party Plugin</a>
+    <span class="sec-note">Built &amp; maintained โดย Anthropic โดยตรง</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 8 commit-commands Plugin — 16.8k -->
+<tr>
+  <td><div class="rn">8</div></td>
+  <td>
+    <div class="tn">💬 commit-commands Plugin</div>
+    <div class="td">Anthropic official — Conventional Commits standard, auto-message generation, commit workflow</div>
+    <div style="margin-top:5px"><span class="pr p3">P3 Medium</span></div>
+  </td>
+  <td><span class="b bp">Plugin</span></td>
+  <td><div class="pop pop-hi">16.8k<span class="pop-src">GitHub ⭐ *</span></div></td>
+  <td style="font-size:11.5px">Anthropic</td>
+  <td><a href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins">claude-plugins-official/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins">Anthropic First-Party Plugin</a>
+    <span class="sec-note">Built &amp; maintained โดย Anthropic โดยตรง</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 9 code-simplifier Plugin — 16.8k -->
+<tr>
+  <td><div class="rn">9</div></td>
+  <td>
+    <div class="tn">✂️ code-simplifier Plugin</div>
+    <div class="td">Anthropic official — refactor โค้ดให้ readable ลด complexity, code quality improvement</div>
+    <div style="margin-top:5px"><span class="pr p4">P4 Nice</span></div>
+  </td>
+  <td><span class="b bp">Plugin</span></td>
+  <td><div class="pop pop-hi">16.8k<span class="pop-src">GitHub ⭐ *</span></div></td>
+  <td style="font-size:11.5px">Anthropic</td>
+  <td><a href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins">claude-plugins-official/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins">Anthropic First-Party Plugin</a>
+    <span class="sec-note">Built &amp; maintained โดย Anthropic โดยตรง</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 10 frontend-design Plugin — 16.8k -->
+<tr>
+  <td><div class="rn">10</div></td>
+  <td>
+    <div class="tn">🎨 frontend-design Plugin</div>
+    <div class="td">Anthropic official — guided frontend UI/UX development, component planning, design-to-code</div>
+    <div style="margin-top:5px"><span class="pr p3">P3 Medium</span></div>
+  </td>
+  <td><span class="b bp">Plugin</span></td>
+  <td><div class="pop pop-hi">16.8k<span class="pop-src">GitHub ⭐ *</span></div></td>
+  <td style="font-size:11.5px">Anthropic</td>
+  <td><a href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins">claude-plugins-official/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins">Anthropic First-Party Plugin</a>
+    <span class="sec-note">Built &amp; maintained โดย Anthropic โดยตรง</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 11 Notion MCP — 4.2k -->
+<tr>
+  <td><div class="rn">11</div></td>
+  <td>
+    <div class="tn">📓 Notion MCP <span style="font-size:10px;color:var(--green);font-weight:600">(แทน Kali Linux MCP)</span></div>
+    <div class="td">Knowledge &amp; wiki management — search, read, update Notion pages จาก Claude เหมาะกับ Tech Education knowledge base</div>
+    <div style="margin-top:5px"><span class="pr p2">P2 High</span></div>
+  </td>
+  <td><span class="b bm">MCP Server</span></td>
+  <td><div class="pop pop-md">4.2k<span class="pop-src">GitHub ⭐</span></div></td>
+  <td style="font-size:11.5px">Notion (makenotion)</td>
+  <td><a href="https://github.com/makenotion/claude-code-notion-plugin">claude-code-notion-plugin</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/makenotion/notion-mcp-server">makenotion/notion-mcp-server</a>
+    <span class="sec-note">OAuth 2.0 + PKCE mandatory, granular permission control, official Notion, ไม่พบ CVE</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 12 Cloudflare MCP — 3.6k -->
+<tr>
+  <td><div class="rn">12</div></td>
+  <td>
+    <div class="tn">☁️ Cloudflare MCP <span style="font-size:10px;color:var(--green);font-weight:600">(แทน Atlassian ที่ติดตั้งแล้ว)</span></div>
+    <div class="td">Edge deployment &amp; Workers management — จัดการ DNS, Workers, Pages, R2 Storage, KV จาก Claude เหมาะกับ SaaS deployment</div>
+    <div style="margin-top:5px"><span class="pr p3">P3 Medium</span></div>
+  </td>
+  <td><span class="b bm">MCP Server</span></td>
+  <td><div class="pop pop-md">3.6k<span class="pop-src">GitHub ⭐</span></div></td>
+  <td style="font-size:11.5px">Cloudflare</td>
+  <td><a href="https://github.com/cloudflare/mcp-server-cloudflare">cloudflare/mcp-server-cloudflare</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/cloudflare/mcp-server-cloudflare">Cloudflare Official MCP Repo</a>
+    <span class="sec-note">Official Cloudflare open-source, API token scoped access, ไม่พบ CVE</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 13 Supabase MCP — 2.6k -->
+<tr>
+  <td><div class="rn">13</div></td>
+  <td>
+    <div class="tn">⚡ Supabase MCP</div>
+    <div class="td">Backend-as-a-Service — database, auth, storage, functions จาก Claude เหมาะกับ Micro SaaS</div>
+    <div style="margin-top:5px"><span class="pr p2">P2 High</span></div>
+  </td>
+  <td><span class="b bm">MCP Server</span></td>
+  <td><div class="pop pop-md">2.6k<span class="pop-src">GitHub ⭐</span></div></td>
+  <td style="font-size:11.5px">Supabase</td>
+  <td><a href="https://claude.com/plugins">claude.com/plugins</a></td>
+  <td>
+    <span class="b bcw">⚠️ Safe w/ config</span>
+    <a class="sec-link" href="https://www.pomerium.com/blog/when-ai-has-root-lessons-from-the-supabase-mcp-data-leak">Pomerium: Supabase MCP data leak analysis</a>
+    <span class="sec-note">ต้องใช้ anon key + เปิด RLS เสมอ ห้ามใช้ service_role key กับ MCP</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 14 Terraform MCP — 1.3k -->
+<tr>
+  <td><div class="rn">14</div></td>
+  <td>
+    <div class="tn">🏗 Terraform MCP</div>
+    <div class="td">Infrastructure as Code — plan/apply Terraform configs, จัดการ cloud infra ได้จาก Claude</div>
+    <div style="margin-top:5px"><span class="pr p4">P4 Nice</span></div>
+  </td>
+  <td><span class="b bm">MCP Server</span></td>
+  <td><div class="pop pop-md">1.3k<span class="pop-src">GitHub ⭐</span></div></td>
+  <td style="font-size:11.5px">HashiCorp</td>
+  <td><a href="https://claude.com/plugins">claude.com/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins">Anthropic claude-plugins-official</a>
+    <span class="sec-note">Anthropic-verified partner, ไม่พบ CVE</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 15 Stripe MCP — ~1.2k -->
+<tr>
+  <td><div class="rn">15</div></td>
+  <td>
+    <div class="tn">💳 Stripe MCP</div>
+    <div class="td">Payment integration — payments, subscriptions, invoices เหมาะกับ SaaS/Micro SaaS development</div>
+    <div style="margin-top:5px"><span class="pr p3">P3 Medium</span></div>
+  </td>
+  <td><span class="b bm">MCP Server</span></td>
+  <td><div class="pop pop-md">~1.2k<span class="pop-src">est. installs</span></div></td>
+  <td style="font-size:11.5px">Stripe</td>
+  <td><a href="https://docs.stripe.com/mcp">docs.stripe.com/mcp</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://docs.stripe.com/mcp">Stripe MCP Official Docs</a>
+    <span class="sec-note">Official Stripe, OAuth or restricted API key, recommends human confirmation, ไม่พบ CVE</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 16 enterprise-search Plugin — ~950 -->
+<tr>
+  <td><div class="rn">16</div></td>
+  <td>
+    <div class="tn">🔍 enterprise-search Plugin</div>
+    <div class="td">Cross-tool search — ค้นหาข้อมูลข้าม email, chat, docs, wiki ทุก connected source ในคำสั่งเดียว</div>
+    <div style="margin-top:5px"><span class="pr p3">P3 Medium</span></div>
+  </td>
+  <td><span class="b bp">Plugin</span></td>
+  <td><div class="pop pop-lo">~950<span class="pop-src">est. installs</span></div></td>
+  <td style="font-size:11.5px">Anthropic Marketplace</td>
+  <td><a href="https://claude.com/plugins">claude.com/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://claude.com/plugins">Anthropic Marketplace Verified</a>
+    <span class="sec-note">Anthropic marketplace, quality &amp; safety review, ไม่พบ CVE</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 17 customer-support Plugin — ~720 -->
+<tr>
+  <td><div class="rn">17</div></td>
+  <td>
+    <div class="tn">🎧 customer-support Plugin</div>
+    <div class="td">Triage tickets, draft responses, escalate — เหมาะกับ Tech Education support &amp; learner feedback</div>
+    <div style="margin-top:5px"><span class="pr p4">P4 Nice</span></div>
+  </td>
+  <td><span class="b bp">Plugin</span></td>
+  <td><div class="pop pop-lo">~720<span class="pop-src">est. installs</span></div></td>
+  <td style="font-size:11.5px">Anthropic Marketplace</td>
+  <td><a href="https://claude.com/plugins">claude.com/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://claude.com/plugins">Anthropic Marketplace Verified</a>
+    <span class="sec-note">Anthropic marketplace, quality &amp; safety review, ไม่พบ CVE</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 18 Sentry MCP — 634 -->
+<tr>
+  <td><div class="rn">18</div></td>
+  <td>
+    <div class="tn">🚨 Sentry MCP</div>
+    <div class="td">Error tracking &amp; performance monitoring — stack traces, breadcrumbs, project health ใน Claude workflow</div>
+    <div style="margin-top:5px"><span class="pr p1">P1 Critical</span></div>
+  </td>
+  <td><span class="b bm">MCP Server</span></td>
+  <td><div class="pop pop-lo">634<span class="pop-src">GitHub ⭐</span></div></td>
+  <td style="font-size:11.5px">Sentry (getsentry)</td>
+  <td><a href="https://claude.com/plugins">claude.com/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/getsentry/sentry-mcp">github.com/getsentry/sentry-mcp</a>
+    <span class="sec-note">Official Sentry repo, read-only API access, ไม่พบ CVE ที่เกี่ยวข้อง</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 19 Vercel MCP — ~580 -->
+<tr>
+  <td><div class="rn">19</div></td>
+  <td>
+    <div class="tn">▲ Vercel MCP</div>
+    <div class="td">Deployment management — deploy, preview, domain management, build logs จาก Claude</div>
+    <div style="margin-top:5px"><span class="pr p3">P3 Medium</span></div>
+  </td>
+  <td><span class="b bm">MCP Server</span></td>
+  <td><div class="pop pop-lo">~580<span class="pop-src">est. installs</span></div></td>
+  <td style="font-size:11.5px">Vercel</td>
+  <td><a href="https://claude.com/plugins">claude.com/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins">Anthropic claude-plugins-official</a>
+    <span class="sec-note">Anthropic-verified partner, OAuth-based, ไม่พบ CVE</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 20 Linear MCP — 345 -->
+<tr>
+  <td><div class="rn">20</div></td>
+  <td>
+    <div class="tn">📐 Linear MCP</div>
+    <div class="td">Agile project management — สร้าง/จัดการ issues, sprints, projects แบบ integrated กับ Claude workflow</div>
+    <div style="margin-top:5px"><span class="pr p2">P2 High</span></div>
+  </td>
+  <td><span class="b bm">MCP Server</span></td>
+  <td><div class="pop pop-lo">345<span class="pop-src">GitHub ⭐</span></div></td>
+  <td style="font-size:11.5px">Linear</td>
+  <td><a href="https://claude.com/plugins">claude.com/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://linear.app/docs/mcp">linear.app/docs/mcp</a>
+    <span class="sec-note">Centrally hosted &amp; managed by Linear, OAuth-based, ไม่พบ CVE</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 21 Discord MCP — 260 -->
+<tr>
+  <td><div class="rn">21</div></td>
+  <td>
+    <div class="tn">💬 Discord MCP</div>
+    <div class="td">Community management — ส่งข้อความ, อ่าน channels, จัดการ community สำหรับ tech education</div>
+    <div style="margin-top:5px"><span class="pr p4">P4 Nice</span></div>
+  </td>
+  <td><span class="b bm">MCP Server</span></td>
+  <td><div class="pop pop-lo">260<span class="pop-src">GitHub ⭐</span></div></td>
+  <td style="font-size:11.5px">Community</td>
+  <td><a href="https://claude.com/plugins">claude.com/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins">Anthropic claude-plugins-official</a>
+    <span class="sec-note">Anthropic-verified partner, ไม่พบ CVE</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 22 Firebase MCP — 244 -->
+<tr>
+  <td><div class="rn">22</div></td>
+  <td>
+    <div class="tn">🔥 Firebase MCP</div>
+    <div class="td">Firestore, Auth, Cloud Functions, Hosting — จัดการ Google Firebase ทั้งหมดจาก Claude</div>
+    <div style="margin-top:5px"><span class="pr p2">P2 High</span></div>
+  </td>
+  <td><span class="b bm">MCP Server</span></td>
+  <td><div class="pop pop-lo">244<span class="pop-src">GitHub ⭐</span></div></td>
+  <td style="font-size:11.5px">Firebase / Google</td>
+  <td><a href="https://claude.com/plugins">claude.com/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins">Anthropic claude-plugins-official</a>
+    <span class="sec-note">Anthropic-verified partner plugin, ไม่พบ CVE</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 23 GitLab MCP — ~180 -->
+<tr>
+  <td><div class="rn">23</div></td>
+  <td>
+    <div class="tn">🦊 GitLab MCP</div>
+    <div class="td">GitLab integration — repos, Merge Requests, pipelines, CI/CD ครบบน GitLab</div>
+    <div style="margin-top:5px"><span class="pr p3">P3 Medium</span></div>
+  </td>
+  <td><span class="b bm">MCP Server</span></td>
+  <td><div class="pop pop-lo">~180<span class="pop-src">est. installs</span></div></td>
+  <td style="font-size:11.5px">GitLab</td>
+  <td><a href="https://claude.com/plugins">claude.com/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins">Anthropic claude-plugins-official</a>
+    <span class="sec-note">Anthropic-verified partner, ไม่พบ CVE</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 24 Asana MCP — 137 -->
+<tr>
+  <td><div class="rn">24</div></td>
+  <td>
+    <div class="tn">✅ Asana MCP <span style="font-size:10px;color:var(--green);font-weight:600">(แทน Context7)</span></div>
+    <div class="td">Project &amp; task management — สร้าง/อ่าน/อัปเดต tasks, projects, workspaces ใน Asana จาก Claude โดยตรง</div>
+    <div style="margin-top:5px"><span class="pr p2">P2 High</span></div>
+  </td>
+  <td><span class="b bm">MCP Server</span></td>
+  <td><div class="pop pop-lo">137<span class="pop-src">GitHub ⭐</span></div></td>
+  <td style="font-size:11.5px">Asana</td>
+  <td><a href="https://developers.asana.com/docs/using-asanas-mcp-server">developers.asana.com</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://developers.asana.com/docs/integrating-with-asanas-mcp-server">Asana MCP Security Docs</a>
+    <span class="sec-note">OAuth 2.0, token blast-radius ถูก contain ตาม permission level ผู้ใช้ ใช้ V2 server ก่อน 05/11/2026</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 25 Greptile MCP — ~90 -->
+<tr>
+  <td><div class="rn">25</div></td>
+  <td>
+    <div class="tn">🔎 Greptile MCP</div>
+    <div class="td">Code intelligence — semantic search ทั้ง codebase เข้าใจ context ของโค้ดทั้งหมดได้ ใช้กับ large repos</div>
+    <div style="margin-top:5px"><span class="pr p2">P2 High</span></div>
+  </td>
+  <td><span class="b bm">MCP Server</span></td>
+  <td><div class="pop pop-lo">~90<span class="pop-src">est. installs</span></div></td>
+  <td style="font-size:11.5px">Greptile</td>
+  <td><a href="https://claude.com/plugins">claude.com/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins">Anthropic claude-plugins-official</a>
+    <span class="sec-note">Anthropic-verified partner, read-only code access, ไม่พบ CVE</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <p class="fn">* Anthropic first-party plugins ใช้ repo เดียวกัน (<a href="https://github.com/anthropics/claude-plugins-official">anthropics/claude-plugins-official</a>) — ⭐ 16.8k คือ stars ของ repo รวม ไม่ใช่ของ plugin แต่ละตัว · ตัวเลข "est. installs" คือประมาณการจาก marketplace/ecosystem data · ข้อมูล GitHub ⭐ ดึงจาก GitHub API เมื่อ 14 Apr 2026</p>
+
+    <!-- Priority grid -->
+    <div class="sh">🚀 Installation Priority</div>
+    <div class="pg">
+      <div class="pb pb1">
+        <h3><span class="pr p1">P1 Critical</span></h3>
+        <ul>
+          <li>🎭 Playwright MCP — E2E testing (30.8k ⭐, patched v0.0.40+)</li>
+          <li>🐙 GitHub MCP — Code repos &amp; PRs (28.8k ⭐, patched Dec 2025)</li>
+          <li>🚨 Sentry MCP — Error tracking (634 ⭐)</li>
+        </ul>
+      </div>
+      <div class="pb pb2">
+        <h3><span class="pr p2">P2 High</span></h3>
+        <ul>
+          <li>📓 Notion MCP — Knowledge base (4.2k ⭐, OAuth2+PKCE)</li>
+          <li>⚡ Supabase MCP — Backend-as-a-Service (2.6k ⭐, ใช้ anon key + RLS)</li>
+          <li>📐 Linear MCP — Agile PM (345 ⭐)</li>
+          <li>🔥 Firebase MCP (244 ⭐)</li>
+          <li>✅ Asana MCP — Task management (137 ⭐)</li>
+          <li>🔎 Greptile MCP — Code intelligence (~90)</li>
+          <li>🛠 feature-dev · 👀 code-review · 📄 claude-md-management (16.8k ⭐*)</li>
+        </ul>
+      </div>
+      <div class="pb pb3">
+        <h3><span class="pr p3">P3 Medium</span></h3>
+        <ul>
+          <li>🐘 PostgreSQL MCP (83.7k ⭐ monorepo)</li>
+          <li>☁️ Cloudflare MCP — Edge &amp; Workers (3.6k ⭐)</li>
+          <li>💳 Stripe MCP (~1.2k)</li>
+          <li>▲ Vercel MCP (~580) · 🦊 GitLab MCP (~180)</li>
+          <li>🪝 hookify · 💬 commit-commands · 🎨 frontend-design (16.8k ⭐*)</li>
+          <li>🔍 enterprise-search (~950)</li>
+        </ul>
+      </div>
+      <div class="pb pb4">
+        <h3><span class="pr p4">P4 Nice-to-have</span></h3>
+        <ul>
+          <li>🏗 Terraform MCP (1.3k ⭐)</li>
+          <li>✂️ code-simplifier (16.8k ⭐*)</li>
+          <li>🎧 customer-support (~720)</li>
+          <li>💬 Discord MCP (260 ⭐)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Current env -->
+    <div class="sh">✅ Current Environment</div>
+    <div class="eb">
+      <h3>MCP Servers ที่เชื่อมต่ออยู่แล้ว</h3>
+      <div class="etags">
+        <span class="et">Slack</span><span class="et">Claude in Chrome</span><span class="et">Desktop Commander</span>
+        <span class="et">Figma</span><span class="et">PDF Tools</span><span class="et">PowerPoint (Anthropic)</span>
+        <span class="et">Word (Anthropic)</span><span class="et">Atlassian Jira+Confluence</span>
+        <span class="et">Google Drive</span><span class="et">Gmail</span><span class="et">Canva</span>
+        <span class="et">Google Calendar</span><span class="et">Spotify</span><span class="et">Apple Notes</span>
+        <span class="et">MCP Registry</span><span class="et">PDF Viewer</span><span class="et">Scheduled Tasks</span>
+      </div>
+    </div>
+    <div class="eb">
+      <h3>Plugins &amp; Custom Skills ที่ติดตั้งแล้ว</h3>
+      <div class="etags">
+        <span class="et">slack-by-salesforce</span><span class="et">engineering (full)</span><span class="et">design (full)</span>
+        <span class="et">marketing (full)</span><span class="et">product-management (full)</span><span class="et">finance (full)</span>
+        <span class="et">productivity (full)</span><span class="et">cowork-plugin-management</span>
+        <span class="et">update-doc-on-github</span><span class="et">skill-plugin-mcp-selector</span>
+        <span class="et">ncbs-qa-review</span><span class="et">natty-update-doc</span><span class="et">workflow-transformer</span>
+        <span class="et">scr-framework</span><span class="et">prompt-optimizer</span><span class="et">elite-presentation-architect</span>
+        <span class="et">doc-coauthoring</span><span class="et">skill-creator</span><span class="et">xlsx / pptx / pdf / docx</span>
+        <span class="et">schedule</span><span class="et">setup-cowork</span>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>🤖 Generated by Natty AI · Daily Skill/Plugin/MCP Audit · 14 April 2026 · All 25 tools installed before this report was sent</p>
+      <span>
+        <a href="https://github.com/anthropics/claude-plugins-official">claude-plugins-official</a> ·
+        <a href="https://github.com/wong2/awesome-mcp-servers">awesome-mcp-servers</a> ·
+        <a href="https://noma.security/blog/contextcrush-context7-the-mcp-server-vulnerability/">Noma Security</a> ·
+        <a href="https://github.com/JLLeitschuh/security-research/security/advisories/GHSA-8rgw-6xp9-2fg3">GHSA-8rgw-6xp9-2fg3</a> ·
+        <a href="https://thehackernews.com/2026/01/three-flaws-in-anthropic-mcp-git-server.html">HackerNews CVE-68143</a> ·
+        <a href="https://www.pomerium.com/blog/when-ai-has-root-lessons-from-the-supabase-mcp-data-leak">Pomerium Supabase</a>
+      </span>
+    </div>
+
+  </div>
+</div>
+
+
+</body></html>
