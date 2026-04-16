@@ -6,92 +6,32 @@
 <title>Daily Skill / Plugin / MCP Audit Reports</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-  :root {
-    --bg-primary:    #1c1c1e;
-    --bg-secondary:  #2c2c2e;
-    --bg-tertiary:   #3a3a3c;
-    --bg-elevated:   #242426;
-    --separator:     rgba(255,255,255,0.09);
-    --lbl-primary:   #ffffff;
-    --lbl-secondary: rgba(235,235,245,0.6);
-    --lbl-tertiary:  rgba(235,235,245,0.28);
-    --blue:   #0a84ff;
-    --green:  #30d158;
-    --tl-r:   #ff5f57;
-    --tl-y:   #febc2e;
-    --tl-g:   #28c840;
-  }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body {
-    font-family: -apple-system,'Inter',BlinkMacSystemFont,'Helvetica Neue',sans-serif;
-    background: var(--bg-primary);
-    color: var(--lbl-primary);
-    min-height: 100vh;
-    padding: 24px;
-    font-size: 14px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-  .window {
-    background: var(--bg-secondary);
-    border-radius: 18px;
-    box-shadow: 0 8px 40px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,255,255,.07);
-    overflow: hidden;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  .titlebar {
-    background: var(--bg-elevated);
-    padding: 14px 20px 12px;
-    display: flex; align-items: center; gap: 14px;
-    border-bottom: 1px solid var(--separator);
-  }
-  .tlights { display:flex; gap:7px; }
-  .tl { width:12px; height:12px; border-radius:50%; box-shadow:0 0 0 .5px rgba(0,0,0,.25); }
-  .tl-r { background:var(--tl-r); } .tl-y { background:var(--tl-y); } .tl-g { background:var(--tl-g); }
-  .ttl { flex:1; text-align:center; font-size:13px; font-weight:500; color:var(--lbl-secondary); }
-  .content { padding: 32px; }
-  h1 { font-size: 24px; font-weight: 700; letter-spacing: -0.3px; margin-bottom: 6px; }
-  .sub { color: var(--lbl-secondary); font-size: 13px; margin-bottom: 28px; }
-  .latest-banner {
-    background: linear-gradient(135deg, rgba(10,132,255,0.15), rgba(48,209,88,0.12));
-    border: 1px solid rgba(10,132,255,0.3);
-    border-radius: 12px;
-    padding: 16px 20px;
-    margin-bottom: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-  }
-  .latest-banner .label { font-size: 11px; font-weight: 600; color: var(--blue); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
-  .latest-banner .title { font-size: 15px; font-weight: 600; }
-  .latest-banner a.btn {
-    background: var(--blue); color: white; text-decoration: none;
-    padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 600;
-    white-space: nowrap; transition: opacity 0.2s;
-  }
-  .latest-banner a.btn:hover { opacity: 0.85; }
-  h2 { font-size: 15px; font-weight: 600; color: var(--lbl-secondary); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px; }
-  .reports { list-style: none; }
-  .reports li {
-    background: var(--bg-tertiary);
-    border: 1px solid var(--separator);
-    border-radius: 10px;
-    margin-bottom: 8px;
-    transition: background 0.15s;
-  }
-  .reports li:hover { background: #454548; }
-  .reports a {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 14px 18px;
-    color: var(--lbl-primary); text-decoration: none;
-    font-size: 14px;
-  }
-  .reports .date { font-weight: 500; }
-  .reports .arrow { color: var(--lbl-tertiary); font-size: 18px; }
-  .footer { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--separator); font-size: 11px; color: var(--lbl-tertiary); text-align: center; }
-  .footer a { color: var(--blue); text-decoration: none; }
+  :root{--bg-primary:#1c1c1e;--bg-secondary:#2c2c2e;--bg-tertiary:#3a3a3c;--bg-elevated:#242426;--separator:rgba(255,255,255,0.09);--lbl-primary:#fff;--lbl-secondary:rgba(235,235,245,0.6);--lbl-tertiary:rgba(235,235,245,0.28);--blue:#0a84ff;--green:#30d158;--tl-r:#ff5f57;--tl-y:#febc2e;--tl-g:#28c840;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,'Inter',BlinkMacSystemFont,sans-serif;background:var(--bg-primary);color:var(--lbl-primary);min-height:100vh;padding:24px;font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .window{background:var(--bg-secondary);border-radius:18px;box-shadow:0 8px 40px rgba(0,0,0,.7),inset 0 1px 0 rgba(255,255,255,.07);overflow:hidden;max-width:900px;margin:0 auto}
+  .titlebar{background:var(--bg-elevated);padding:14px 20px 12px;display:flex;align-items:center;gap:14px;border-bottom:1px solid var(--separator)}
+  .tlights{display:flex;gap:7px}
+  .tl{width:12px;height:12px;border-radius:50%;box-shadow:0 0 0 .5px rgba(0,0,0,.25)}
+  .tl-r{background:var(--tl-r)}.tl-y{background:var(--tl-y)}.tl-g{background:var(--tl-g)}
+  .ttl{flex:1;text-align:center;font-size:13px;font-weight:500;color:var(--lbl-secondary)}
+  .content{padding:32px}
+  h1{font-size:24px;font-weight:700;letter-spacing:-0.3px;margin-bottom:6px}
+  .sub{color:var(--lbl-secondary);font-size:13px;margin-bottom:28px}
+  .latest-banner{background:linear-gradient(135deg,rgba(10,132,255,0.15),rgba(48,209,88,0.12));border:1px solid rgba(10,132,255,0.3);border-radius:12px;padding:16px 20px;margin-bottom:24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .latest-banner .label{font-size:11px;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px}
+  .latest-banner .title{font-size:15px;font-weight:600}
+  .latest-banner a.btn{background:var(--blue);color:#fff;text-decoration:none;padding:10px 18px;border-radius:8px;font-size:13px;font-weight:600;white-space:nowrap;transition:opacity 0.2s}
+  .latest-banner a.btn:hover{opacity:0.85}
+  h2{font-size:15px;font-weight:600;color:var(--lbl-secondary);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px}
+  .reports{list-style:none}
+  .reports li{background:var(--bg-tertiary);border:1px solid var(--separator);border-radius:10px;margin-bottom:8px;transition:background 0.15s}
+  .reports li:hover{background:#454548}
+  .reports a{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;color:var(--lbl-primary);text-decoration:none;font-size:14px}
+  .reports .date{font-weight:500}
+  .reports .arrow{color:var(--lbl-tertiary);font-size:18px}
+  .footer{margin-top:28px;padding-top:20px;border-top:1px solid var(--separator);font-size:11px;color:var(--lbl-tertiary);text-align:center}
+  .footer a{color:var(--blue);text-decoration:none}
 </style>
 </head>
 <body>
@@ -104,20 +44,18 @@
     <div class="content">
       <h1>📊 Daily Audit Reports</h1>
       <p class="sub">Automated daily verification of top 25 Claude Skills, Plugins &amp; MCPs — updated every Thai workday at 10:30 AM.</p>
-
       <div class="latest-banner">
         <div>
           <div class="label">Latest Report</div>
-          <div class="title">14 April 2026 — 25 Tools Verified &amp; Installed</div>
+          <div class="title">16 April 2026 — 25 Tools Verified &amp; Installed</div>
         </div>
         <a class="btn" href="./latest.html">Open →</a>
       </div>
-
       <h2>All Reports</h2>
       <ul class="reports">
+        <li><a href="./reports/2026-04-16.html"><span class="date">📅 16 April 2026</span><span class="arrow">›</span></a></li>
         <li><a href="./reports/2026-04-14.html"><span class="date">📅 14 April 2026</span><span class="arrow">›</span></a></li>
       </ul>
-
       <div class="footer">
         Auto-deployed from <a href="https://github.com/Thitic9203/skill-plugin-audit">Thitic9203/skill-plugin-audit</a> · macOS Dark Theme
       </div>
