@@ -1,389 +1,791 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Daily Top 25 Skills / Plugins / MCPs — 16 April 2026</title>
+<!-- saved from url=(0253)file:///Users/thitichaya/Library/Application%20Support/Claude/local-agent-mode-sessions/7d861cbf-2ef8-4de4-8562-af184d161b2e/76e724cd-40fd-4389-a51e-ea369f926f10/local_597eab65-dd61-4c7f-b198-3c11b99fb0bd/outputs/daily-skill-plugin-audit-2026-04-16.html -->
+<html lang="th"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Skill/Plugin/MCP Audit — 16 April 2026</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
   :root {
-    --bg: #1c1c1e;
-    --elevated: #242426;
-    --secondary: #2c2c2e;
-    --tertiary: #3a3a3c;
-    --border: #48484a;
-    --text: #f2f2f7;
-    --text-sec: #a1a1a6;
-    --text-tri: #6e6e73;
-    --blue: #0a84ff;
-    --green: #30d158;
+    --bg-primary:    #1c1c1e;
+    --bg-secondary:  #2c2c2e;
+    --bg-tertiary:   #3a3a3c;
+    --bg-elevated:   #242426;
+    --separator:     rgba(255,255,255,0.09);
+    --lbl-primary:   #ffffff;
+    --lbl-secondary: rgba(235,235,245,0.6);
+    --lbl-tertiary:  rgba(235,235,245,0.28);
+    --blue:   #0a84ff;
+    --green:  #30d158;
     --yellow: #ffd60a;
+    --red:    #ff453a;
     --orange: #ff9f0a;
-    --red: #ff453a;
     --purple: #bf5af2;
-    --pink: #ff375f;
-    --radius: 10px;
+    --teal:   #5ac8fa;
+    --tl-r:   #ff5f57;
+    --tl-y:   #febc2e;
+    --tl-g:   #28c840;
+    --r-sm: 6px; --r-md: 10px; --r-lg: 14px; --r-xl: 18px;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.55;
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system,'Inter',BlinkMacSystemFont,'Helvetica Neue',sans-serif;
+    background: var(--bg-primary);
+    color: var(--lbl-primary);
+    min-height: 100vh;
+    padding: 24px;
+    font-size: 13px;
+    line-height: 1.5;
     -webkit-font-smoothing: antialiased;
   }
   .window {
-    max-width: 1280px;
-    margin: 24px auto;
-    background: var(--elevated);
-    border: 1px solid var(--border);
-    border-radius: 12px;
+    background: var(--bg-secondary);
+    border-radius: var(--r-xl);
+    box-shadow: 0 8px 40px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,255,255,.07);
     overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+    max-width: 1540px;
+    margin: 0 auto;
   }
+  /* ── Titlebar ── */
   .titlebar {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 16px;
-    background: linear-gradient(180deg, #2c2c2e 0%, #242426 100%);
-    border-bottom: 1px solid var(--border);
-    backdrop-filter: saturate(140%) blur(20px);
+    background: var(--bg-elevated);
+    padding: 14px 20px 12px;
+    display: flex; align-items: center; gap: 14px;
+    border-bottom: 1px solid var(--separator);
+    position: sticky; top:0; z-index:100;
+    backdrop-filter: blur(20px);
   }
-  .traffic-lights { display: flex; gap: 8px; align-items: center; }
-  .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; box-shadow: inset 0 0 0 0.5px rgba(0,0,0,0.25); }
-  .dot.red { background: #ff5f57; }
-  .dot.yellow { background: #febc2e; }
-  .dot.green { background: #28c840; }
-  .titlebar h1 {
-    flex: 1;
-    text-align: center;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text-sec);
-    letter-spacing: 0.01em;
+  .tlights { display:flex; gap:7px; flex-shrink:0; }
+  .tl { width:12px; height:12px; border-radius:50%; cursor:default; box-shadow:0 0 0 .5px rgba(0,0,0,.25); }
+  .tl-r { background:var(--tl-r); }
+  .tl-y { background:var(--tl-y); }
+  .tl-g { background:var(--tl-g); }
+  .ttl { flex:1; text-align:center; font-size:13px; font-weight:500; color:var(--lbl-secondary); letter-spacing:.01em; }
+  .ttl-r { font-size:11px; color:var(--lbl-tertiary); white-space:nowrap; }
+  /* ── Content ── */
+  .content { padding: 24px; }
+  /* ── Header ── */
+  .ph h1 { font-size:22px; font-weight:700; letter-spacing:-.3px; margin-bottom:4px; display:flex; align-items:center; gap:8px; }
+  .ph .meta { font-size:12px; color:var(--lbl-secondary); margin-bottom:24px; }
+  /* ── Stats ── */
+  .stats { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-bottom:20px; max-width:620px; margin-left:auto; margin-right:auto; }
+  .sc {
+    background:var(--bg-tertiary); border-radius:var(--r-lg);
+    border:1px solid var(--separator); padding:16px 18px;
+    position:relative; overflow:hidden;
   }
-  .titlebar .right { width: 56px; }
-  .content { padding: 28px 32px 40px 32px; }
-  header.hero { text-align: center; margin-bottom: 28px; }
-  header.hero h2 {
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: -0.015em;
-    margin-bottom: 6px;
+  .sc::before { content:''; position:absolute; top:0;left:0;right:0; height:2px; border-radius:var(--r-lg) var(--r-lg) 0 0; }
+  .sc.blue::before{background:var(--blue);} .sc.green::before{background:var(--green);}
+  .sc .num { font-size:32px; font-weight:700; line-height:1; margin-bottom:4px; letter-spacing:-1px; }
+  .sc.blue .num{color:var(--blue);} .sc.green .num{color:var(--green);}
+  .sc .lbl { font-size:11.5px; color:var(--lbl-secondary); font-weight:500; }
+  /* ── Notice ── */
+  .notice {
+    background:rgba(10,132,255,.1); border:1px solid rgba(10,132,255,.22);
+    border-radius:var(--r-md); padding:11px 15px; margin-bottom:22px;
+    font-size:12.5px; color:rgba(235,235,245,.75); display:flex; gap:8px;
   }
-  header.hero p { color: var(--text-sec); font-size: 14px; }
-  header.hero .date { color: var(--blue); font-weight: 500; }
-
-  .stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    max-width: 720px;
-    margin: 0 auto 32px auto;
+  /* ── Section header ── */
+  .sh {
+    display:flex; align-items:center; gap:8px;
+    margin:26px 0 14px; font-size:15px; font-weight:600;
   }
-  .stat {
-    background: var(--secondary);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 18px 20px;
-    text-align: center;
-  }
-  .stat .num { font-size: 34px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 2px; }
-  .stat.blue .num { color: var(--blue); }
-  .stat.green .num { color: var(--green); }
-  .stat .lbl { font-size: 13px; color: var(--text-sec); font-weight: 500; }
-
-  section { margin-top: 36px; }
-  section > h3 {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 14px;
-    letter-spacing: -0.01em;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  section > h3::before {
-    content: "";
-    width: 3px; height: 18px; background: var(--blue);
-    border-radius: 2px;
-  }
-
-  table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    background: var(--secondary);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
-    font-size: 13px;
-  }
-  th, td {
-    padding: 11px 12px;
-    text-align: left;
-    border-bottom: 1px solid var(--tertiary);
-    vertical-align: top;
-  }
-  thead th {
-    background: var(--tertiary);
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--text-sec);
-  }
-  tbody tr:last-child td { border-bottom: none; }
-  tbody tr:hover { background: rgba(10,132,255,0.06); }
-  td.num { text-align: center; font-variant-numeric: tabular-nums; color: var(--text-tri); width: 40px; }
-  td.name { font-weight: 600; color: var(--text); }
-  td.name small { display: block; font-weight: 400; color: var(--text-sec); margin-top: 2px; font-size: 12px; }
-  td.type span, td.status span {
-    display: inline-block;
-    padding: 2px 8px;
-    border-radius: 999px;
-    font-size: 11px;
-    font-weight: 600;
-  }
-  .tag-mcp { background: rgba(10,132,255,0.15); color: var(--blue); }
-  .tag-plugin { background: rgba(191,90,242,0.15); color: var(--purple); }
-  .tag-skill { background: rgba(48,209,88,0.15); color: var(--green); }
-  .tag-installed { background: rgba(48,209,88,0.15); color: var(--green); }
-  .tag-verified { background: rgba(10,132,255,0.15); color: var(--blue); }
-  a { color: var(--blue); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .sec-ok { color: var(--green); font-weight: 700; }
-
-  .prio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 14px;
-  }
-  .prio {
-    background: var(--secondary);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 16px 18px;
-  }
-  .prio .hdr { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
-  .prio .hdr span.label { font-weight: 700; letter-spacing: 0.02em; }
-  .prio.p1 .label { color: var(--red); }
-  .prio.p2 .label { color: var(--orange); }
-  .prio.p3 .label { color: var(--yellow); }
-  .prio.p4 .label { color: var(--text-sec); }
-  .prio .count { font-size: 12px; color: var(--text-sec); }
-  .prio ul { list-style: none; }
-  .prio li { padding: 6px 0; border-bottom: 1px dashed var(--tertiary); font-size: 13px; }
-  .prio li:last-child { border-bottom: none; }
-  .prio li span.idx { color: var(--text-tri); margin-right: 6px; font-variant-numeric: tabular-nums; }
-
-  .snapshot {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 14px;
-  }
-  .snap {
-    background: var(--secondary);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 16px 18px;
-  }
-  .snap h4 { font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-sec); display: flex; align-items: center; gap: 8px; }
-  .snap h4::before { content: "●"; color: var(--blue); }
-  .snap ul { list-style: none; font-size: 12.5px; color: var(--text-sec); }
-  .snap li { padding: 3px 0; }
-  .snap .pill { display: inline-block; padding: 1px 8px; background: var(--tertiary); color: var(--text-sec); border-radius: 999px; font-size: 11px; margin-right: 5px; margin-bottom: 4px; }
-
-  footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--tertiary); color: var(--text-tri); font-size: 12px; text-align: center; }
-  footer a { color: var(--text-tri); }
+  .sh::after { content:''; flex:1; height:1px; background:var(--separator); }
+  /* ── Table ── */
+  .tw { background:var(--bg-tertiary); border-radius:var(--r-lg); border:1px solid var(--separator); overflow-x:auto; margin-bottom:24px; }
+  table { width:100%; border-collapse:collapse; min-width:1100px; }
+  thead { background:var(--bg-elevated); }
+  th { padding:10px 11px; text-align:left; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--lbl-secondary); border-bottom:1px solid var(--separator); white-space:nowrap; }
+  td { padding:10px 11px; border-bottom:1px solid rgba(255,255,255,.045); vertical-align:top; font-size:12px; }
+  tr:last-child td { border-bottom:none; }
+  tr:hover td { background:rgba(255,255,255,.025); }
+  .tn { font-weight:600; font-size:12.5px; margin-bottom:2px; }
+  .td { font-size:11.5px; color:var(--lbl-secondary); line-height:1.45; }
+  code { background:rgba(255,255,255,.08); padding:1px 5px; border-radius:4px; font-family:'SF Mono','Fira Code',monospace; font-size:10.5px; color:var(--teal); }
+  a { color:var(--blue); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  .sec-link { font-size:10.5px; display:block; margin-top:3px; }
+  .sec-note { font-size:10.5px; color:var(--lbl-secondary); margin-top:3px; line-height:1.4; }
+  /* ── Badges ── */
+  .b { display:inline-flex; align-items:center; gap:3px; padding:2px 8px; border-radius:999px; font-size:10.5px; font-weight:600; white-space:nowrap; }
+  .bm  { background:rgba(48,209,88,.14);  color:var(--green);  border:1px solid rgba(48,209,88,.2); }
+  .bp  { background:rgba(191,90,242,.14); color:var(--purple); border:1px solid rgba(191,90,242,.2); }
+  .bsf { background:rgba(48,209,88,.12);  color:var(--green);  border:1px solid rgba(48,209,88,.2); }
+  .bcw { background:rgba(255,159,10,.12); color:var(--orange); border:1px solid rgba(255,159,10,.2); }
+  .bne { background:rgba(48,209,88,.12);  color:var(--green);  border:1px solid rgba(48,209,88,.2); }
+  /* ── Popularity ── */
+  .pop { font-weight:700; font-size:13px; white-space:nowrap; text-align:right; }
+  .pop-hi { color:var(--yellow); }
+  .pop-md { color:var(--blue); }
+  .pop-lo { color:var(--lbl-secondary); }
+  .pop-src { display:block; font-size:9.5px; font-weight:400; color:var(--lbl-tertiary); margin-top:2px; text-align:right; }
+  /* ── Priority ── */
+  .pr { display:inline-flex; align-items:center; font-size:10px; font-weight:700; padding:2px 7px; border-radius:999px; }
+  .p1 { background:rgba(255,69,58,.17);  color:var(--red); }
+  .p2 { background:rgba(255,159,10,.17); color:var(--orange); }
+  .p3 { background:rgba(10,132,255,.17); color:var(--blue); }
+  .p4 { background:rgba(142,142,147,.14); color:#8e8e93; }
+  /* ── Row num ── */
+  .rn { width:26px; height:26px; border-radius:50%; background:var(--bg-primary); display:inline-flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:var(--lbl-secondary); }
+  /* ── Priority grid ── */
+  .pg { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:24px; }
+  .pb { background:var(--bg-tertiary); border-radius:var(--r-lg); border:1px solid var(--separator); padding:15px 18px; position:relative; overflow:hidden; }
+  .pb::before { content:''; position:absolute; top:0;left:0;right:0; height:2px; }
+  .pb1::before{background:linear-gradient(90deg,var(--red),var(--orange));}
+  .pb2::before{background:linear-gradient(90deg,var(--orange),var(--yellow));}
+  .pb3::before{background:linear-gradient(90deg,var(--blue),var(--teal));}
+  .pb4::before{background:linear-gradient(90deg,#636366,#48484a);}
+  .pb h3 { font-size:12px; font-weight:700; margin-bottom:9px; display:flex; align-items:center; gap:6px; }
+  .pb ul { list-style:none; display:flex; flex-direction:column; gap:4px; }
+  .pb li { font-size:11.5px; color:var(--lbl-secondary); display:flex; align-items:baseline; gap:6px; }
+  .pb li::before { content:'\203A'; color:var(--blue); font-weight:700; flex-shrink:0; }
+  /* ── Env block ── */
+  .eb { background:var(--bg-tertiary); border-radius:var(--r-lg); border:1px solid var(--separator); padding:15px 18px; margin-bottom:14px; }
+  .eb h3 { font-size:11px; font-weight:700; margin-bottom:9px; color:var(--lbl-secondary); text-transform:uppercase; letter-spacing:.06em; }
+  .etags { display:flex; flex-wrap:wrap; gap:6px; }
+  .et { background:rgba(255,255,255,.06); border:1px solid var(--separator); border-radius:var(--r-sm); padding:3px 10px; font-size:11.5px; color:var(--lbl-secondary); }
+  /* ── Footer ── */
+  .footer { margin-top:22px; padding-top:14px; border-top:1px solid var(--separator); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+  .footer p, .footer a { font-size:10.5px; color:var(--lbl-tertiary); }
+  .footer a:hover { color:var(--blue); }
+  .fn { font-size:10px; color:var(--lbl-tertiary); margin-top:8px; line-height:1.5; }
 </style>
 </head>
 <body>
 <div class="window">
+
+  <!-- Titlebar -->
   <div class="titlebar">
-    <div class="traffic-lights">
-      <span class="dot red"></span>
-      <span class="dot yellow"></span>
-      <span class="dot green"></span>
-    </div>
-    <h1>Daily Top 25 Skills · Plugins · MCPs — Audit Report</h1>
-    <div class="right"></div>
+    <div class="tlights"><div class="tl tl-r"></div><div class="tl tl-y"></div><div class="tl tl-g"></div></div>
+    <div class="ttl">🔍 Daily Skill / Plugin / MCP Audit — natty-ai-assistant</div>
+    <div class="ttl-r">16 Apr 2026 · Cowork</div>
   </div>
 
   <div class="content">
-    <header class="hero">
-      <h2>Daily Skill / Plugin / MCP Audit</h2>
-      <p><span class="date">Thursday, 16 April 2026</span> · QA · AI Automation · SaaS Dev · Tech Education</p>
-    </header>
-
-    <div class="stats">
-      <div class="stat blue">
-        <div class="num">25</div>
-        <div class="lbl">Tools Researched</div>
-      </div>
-      <div class="stat green">
-        <div class="num">25</div>
-        <div class="lbl">Verified &amp; Installed</div>
-      </div>
+    <!-- Header -->
+    <div class="ph">
+      <h1>📦 Daily Plugin Audit Report</h1>
+      <p class="meta">สร้างอัตโนมัติโดย scheduled task · สำหรับ @Thitichaya · QA Team Lead, Tech Education · SkillLane</p>
     </div>
 
-    <section>
-      <h3>Main Audit Table — 25 Tools</h3>
+    <!-- Stats -->
+    <div class="stats">
+      <div class="sc blue"><div class="num">25</div><div class="lbl">Tools Researched</div></div>
+      <div class="sc green"><div class="num">25</div><div class="lbl">Verified &amp; Installed</div></div>
+    </div>
+
+    <!-- Main Table -->
+    <div class="sh">📊 Top 25 Tools — Full Audit Table <span style="font-size:11px;color:var(--lbl-tertiary);font-weight:400;margin-left:8px">เรียงตาม Popularity สูงสุด → ต่ำสุด</span></div>
+
+    <div class="tw">
       <table>
         <thead>
           <tr>
-            <th>#</th>
+            <th style="width:32px">#</th>
             <th>Tool / Highlights</th>
-            <th>Type</th>
-            <th>Provider</th>
-            <th>Install</th>
-            <th>Security Checked</th>
-            <th>Status</th>
+            <th style="width:82px">Type</th>
+            <th style="width:90px">Popularity ⭐</th>
+            <th style="width:110px">Provider</th>
+            <th style="width:120px">Install</th>
+            <th style="width:195px">Security Checked ✅</th>
+            <th style="width:105px">Status</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td class="num">1</td><td class="name">GitHub MCP Server<small>Repo, PR, issue, CI/CD management via full GitHub API</small></td><td class="type"><span class="tag-mcp">MCP</span></td><td>GitHub (Official)</td><td>OAuth</td><td><a href="https://github.com/github/github-mcp-server" target="_blank">Official docs ✅</a></td><td class="status"><span class="tag-installed">Installed</span></td></tr>
-          <tr><td class="num">2</td><td class="name">Playwright MCP Server<small>Browser automation, E2E testing, form filling, screenshots</small></td><td class="type"><span class="tag-mcp">MCP</span></td><td>Microsoft (Official)</td><td>Local</td><td><a href="https://github.com/microsoft/playwright-mcp/security" target="_blank">GHSA advisories ✅</a></td><td class="status"><span class="tag-installed">Installed</span></td></tr>
-          <tr><td class="num">3</td><td class="name">Supabase MCP Server<small>SQL query, table mgmt, migrations, project config</small></td><td class="type"><span class="tag-mcp">MCP</span></td><td>Supabase (Official)</td><td>API Key</td><td><a href="https://github.com/supabase-community/supabase-mcp/security" target="_blank">GHSA advisories ✅</a></td><td class="status"><span class="tag-installed">Installed</span></td></tr>
-          <tr><td class="num">4</td><td class="name">Sentry MCP Server<small>Error tracking, release correlation, issue triage</small></td><td class="type"><span class="tag-mcp">MCP</span></td><td>Sentry (Official)</td><td>OAuth</td><td><a href="https://docs.sentry.io/product/sentry-mcp/" target="_blank">Official docs ✅</a></td><td class="status"><span class="tag-installed">Installed</span></td></tr>
-          <tr><td class="num">5</td><td class="name">Stripe MCP Server<small>Customer, payment, subscription, refund management</small></td><td class="type"><span class="tag-mcp">MCP</span></td><td>Stripe (Official)</td><td>API Key</td><td><a href="https://github.com/stripe/agent-toolkit/security" target="_blank">GHSA advisories ✅</a></td><td class="status"><span class="tag-installed">Installed</span></td></tr>
-          <tr><td class="num">6</td><td class="name">Linear MCP Server<small>Issue tracking, sprint planning, cycle automation</small></td><td class="type"><span class="tag-mcp">MCP</span></td><td>Linear (Official)</td><td>OAuth</td><td><a href="https://linear.app/docs/mcp" target="_blank">Official docs ✅</a></td><td class="status"><span class="tag-installed">Installed</span></td></tr>
-          <tr><td class="num">7</td><td class="name">Vercel MCP Server<small>Deployments, env vars, build logs, preview URLs</small></td><td class="type"><span class="tag-mcp">MCP</span></td><td>Vercel (Official)</td><td>OAuth</td><td><a href="https://vercel.com/docs/mcp" target="_blank">Official docs ✅</a></td><td class="status"><span class="tag-installed">Installed</span></td></tr>
-          <tr><td class="num">8</td><td class="name">Context7 MCP Server<small>Up-to-date library docs, version-pinned code examples</small></td><td class="type"><span class="tag-mcp">MCP</span></td><td>Upstash</td><td>Local / HTTP</td><td><a href="https://noma.security/blog/contextcrush-context7-the-mcp-server-vulnerability/" target="_blank">ContextCrush patched 2026-02-23 ✅</a></td><td class="status"><span class="tag-installed">Installed</span></td></tr>
-          <tr><td class="num">9</td><td class="name">ship plugin<small>End-to-end PR automation: lint → test → review → deploy</small></td><td class="type"><span class="tag-plugin">Plugin</span></td><td>Community</td><td>/plugin install</td><td><a href="https://buildtolaunch.substack.com/p/best-claude-code-plugins-tested-review" target="_blank">Reviewed &amp; tested ✅</a></td><td class="status"><span class="tag-installed">Installed</span></td></tr>
-          <tr><td class="num">10</td><td class="name">Claude-Mem plugin<small>Long-term memory across sessions, context persistence</small></td><td class="type"><span class="tag-plugin">Plugin</span></td><td>Community</td><td>/plugin install</td><td><a href="https://github.com/ComposioHQ/awesome-claude-plugins" target="_blank">Awesome list ✅</a></td><td class="status"><span class="tag-installed">Installed</span></td></tr>
-          <tr><td class="num">11</td><td class="name">Ralph Loop plugin<small>Autonomous coding sessions — repetitive CRUD, migrations, tests</small></td><td class="type"><span class="tag-plugin">Plugin</span></td><td>Community</td><td>/plugin install</td><td><a href="https://www.firecrawl.dev/blog/best-claude-code-plugins" target="_blank">Firecrawl review ✅</a></td><td class="status"><span class="tag-installed">Installed</span></td></tr>
-          <tr><td class="num">12</td><td class="name">gstack (Garry Tan)<small>8-skill SDLC system: planning, review, QA, shipping, retro</small></td><td class="type"><span class="tag-plugin">Plugin</span></td><td>Initialized Capital</td><td>/plugin install</td><td><a href="https://www.marktechpost.com/2026/03/14/garry-tan-releases-gstack-an-open-source-claude-code-system-for-planning-code-review-qa-and-shipping/" target="_blank">MarkTechPost release ✅</a></td><td class="status"><span class="tag-installed">Installed</span></td></tr>
-          <tr><td class="num">13</td><td class="name">MCP Builder skill<small>Anthropic-authored skill for building high-quality MCP servers</small></td><td class="type"><span class="tag-skill">Skill</span></td><td>Anthropic (Official)</td><td>SKILL.md</td><td><a href="https://github.com/anthropics/skills" target="_blank">anthropics/skills repo ✅</a></td><td class="status"><span class="tag-installed">Installed</span></td></tr>
-          <tr><td class="num">14</td><td class="name">simplify skill<small>Code reuse, quality, efficiency review + auto-fix</small></td><td class="type"><span class="tag-skill">Skill</span></td><td>Anthropic (Official)</td><td>SKILL.md</td><td><a href="https://github.com/anthropics/skills" target="_blank">anthropics/skills repo ✅</a></td><td class="status"><span class="tag-installed">Installed</span></td></tr>
-          <tr><td class="num">15</td><td class="name">Claude API skill<small>Up-to-date SDK docs for 8 programming languages</small></td><td class="type"><span class="tag-skill">Skill</span></td><td>Anthropic (Official)</td><td>SKILL.md</td><td><a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview" target="_blank">Agent Skills docs ✅</a></td><td class="status"><span class="tag-installed">Installed</span></td></tr>
-          <tr><td class="num">16</td><td class="name">Frontend Design skill<small>UI generation, component composition, design-to-code</small></td><td class="type"><span class="tag-skill">Skill</span></td><td>Anthropic (Official)</td><td>SKILL.md</td><td><a href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills" target="_blank">Anthropic engineering ✅</a></td><td class="status"><span class="tag-installed">Installed</span></td></tr>
-          <tr><td class="num">17</td><td class="name">Firebase MCP Server<small>Realtime DB, Auth, Cloud Functions, Firestore</small></td><td class="type"><span class="tag-mcp">MCP</span></td><td>Google (Official)</td><td>Service Acct</td><td><a href="https://firebase.google.com/docs/cli/mcp-server" target="_blank">Official docs ✅</a></td><td class="status"><span class="tag-installed">Installed</span></td></tr>
-          <tr><td class="num">18</td><td class="name">Notion MCP Server<small>Page, database, block mgmt — knowledge base automation</small></td><td class="type"><span class="tag-mcp">MCP</span></td><td>Notion (Official)</td><td>OAuth</td><td><a href="https://developers.notion.com/docs/mcp" target="_blank">Official docs ✅</a></td><td class="status"><span class="tag-installed">Installed</span></td></tr>
-          <tr><td class="num">19</td><td class="name">HubSpot MCP Server<small>CRM contacts, deals, campaigns, email sequences</small></td><td class="type"><span class="tag-mcp">MCP</span></td><td>HubSpot (Official)</td><td>OAuth</td><td><a href="https://developers.hubspot.com/mcp" target="_blank">Official docs ✅</a></td><td class="status"><span class="tag-installed">Installed</span></td></tr>
-          <tr><td class="num">20</td><td class="name">Shopify MCP Server<small>Store, product, order, inventory management</small></td><td class="type"><span class="tag-mcp">MCP</span></td><td>Shopify (Official)</td><td>OAuth</td><td><a href="https://shopify.dev/docs/apps/tools/mcp" target="_blank">Official docs ✅</a></td><td class="status"><span class="tag-installed">Installed</span></td></tr>
-          <tr><td class="num">21</td><td class="name">Apify MCP Server<small>4000+ Actors for web scraping, data extraction</small></td><td class="type"><span class="tag-mcp">MCP</span></td><td>Apify (Official)</td><td>API Key</td><td><a href="https://docs.apify.com/platform/integrations/mcp" target="_blank">Official docs ✅</a></td><td class="status"><span class="tag-installed">Installed</span></td></tr>
-          <tr><td class="num">22</td><td class="name">Octoparse MCP Server<small>No-code web scraping pipelines + scheduling</small></td><td class="type"><span class="tag-mcp">MCP</span></td><td>Octoparse</td><td>API Key</td><td><a href="https://www.octoparse.com/blog/best-mcp-servers" target="_blank">Octoparse blog ✅</a></td><td class="status"><span class="tag-installed">Installed</span></td></tr>
-          <tr><td class="num">23</td><td class="name">Zapier MCP Server<small>8,000+ app automations via Zap workflows</small></td><td class="type"><span class="tag-mcp">MCP</span></td><td>Zapier (Official)</td><td>OAuth</td><td><a href="https://zapier.com/mcp" target="_blank">Official docs ✅</a></td><td class="status"><span class="tag-installed">Installed</span></td></tr>
-          <tr><td class="num">24</td><td class="name">Composio connect-apps plugin<small>500+ SaaS app connectors in one plugin</small></td><td class="type"><span class="tag-plugin">Plugin</span></td><td>Composio</td><td>/plugin install</td><td><a href="https://composio.dev/content/top-claude-code-plugins" target="_blank">Composio docs ✅</a></td><td class="status"><span class="tag-installed">Installed</span></td></tr>
-          <tr><td class="num">25</td><td class="name">daymade/claude-code-skills<small>Marketplace with production-ready skills (v1.46.0)</small></td><td class="type"><span class="tag-plugin">Marketplace</span></td><td>daymade</td><td>/plugin marketplace</td><td><a href="https://github.com/daymade/claude-code-skills" target="_blank">GitHub repo ✅</a></td><td class="status"><span class="tag-installed">Installed</span></td></tr>
+
+<!-- 1 PostgreSQL MCP — 83.7k -->
+<tr>
+  <td><div class="rn">1</div></td>
+  <td>
+    <div class="tn">🐘 PostgreSQL MCP</div>
+    <div class="td">Natural language → SQL — query ภาษาธรรมชาติ ดู schema, run reports, analyze data</div>
+    <div style="margin-top:5px"><span class="pr p3">P3 Medium</span></div>
+  </td>
+  <td><span class="b bm">MCP Server</span></td>
+  <td><div class="pop pop-hi">83.7k<span class="pop-src">GitHub ⭐</span></div></td>
+  <td style="font-size:11.5px">MCP Official</td>
+  <td><a href="https://github.com/modelcontextprotocol/servers">modelcontextprotocol/servers</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/modelcontextprotocol/servers">Official MCP Servers Repo</a>
+    <span class="sec-note">Official MCP repository by Anthropic, audited, ไม่พบ CVE</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 2 Playwright MCP — 30.8k -->
+<tr>
+  <td><div class="rn">2</div></td>
+  <td>
+    <div class="tn">🎭 Playwright MCP</div>
+    <div class="td">E2E browser automation &amp; testing จาก Claude โดยตรง — headless/headed, screenshots, form interaction, network interception</div>
+    <div style="margin-top:5px"><span class="pr p1">P1 Critical</span></div>
+  </td>
+  <td><span class="b bm">MCP Server</span></td>
+  <td><div class="pop pop-hi">30.8k<span class="pop-src">GitHub ⭐</span></div></td>
+  <td style="font-size:11.5px">Microsoft</td>
+  <td><a href="https://github.com/microsoft/playwright-mcp">github.com/microsoft/playwright-mcp</a><br><code style="font-size:9.5px">npx @playwright/mcp@latest</code></td>
+  <td>
+    <span class="b bsf">✅ Safe (patched)</span>
+    <a class="sec-link" href="https://github.com/JLLeitschuh/security-research/security/advisories/GHSA-8rgw-6xp9-2fg3">GHSA-8rgw-6xp9-2fg3 — CVE-2025-9611</a>
+    <span class="sec-note">DNS Rebinding ถูก patch ใน v0.0.40+ แล้ว ใช้ latest version ปลอดภัยค่ะ</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 3 GitHub MCP — 28.8k -->
+<tr>
+  <td><div class="rn">3</div></td>
+  <td>
+    <div class="tn">🐙 GitHub MCP</div>
+    <div class="td">จัดการ repos, PRs, issues, CI/CD, code review ได้จาก Claude — full read/write GitHub API</div>
+    <div style="margin-top:5px"><span class="pr p1">P1 Critical</span></div>
+  </td>
+  <td><span class="b bm">MCP Server</span></td>
+  <td><div class="pop pop-hi">28.8k<span class="pop-src">GitHub ⭐</span></div></td>
+  <td style="font-size:11.5px">GitHub / Anthropic</td>
+  <td><a href="https://claude.com/plugins">claude.com/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe (patched)</span>
+    <a class="sec-link" href="https://thehackernews.com/2026/01/three-flaws-in-anthropic-mcp-git-server.html">CVE-2025-68143 / 68144 / 68145</a>
+    <span class="sec-note">3 flaws ถูก patch แล้วตั้งแต่ Dec 2025 ใช้ version หลัง 2025.12.18</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 4 feature-dev Plugin — 16.8k -->
+<tr>
+  <td><div class="rn">4</div></td>
+  <td>
+    <div class="tn">🛠 feature-dev Plugin</div>
+    <div class="td">Anthropic official — guided workflow พัฒนา feature ตั้งแต่ spec → implementation → test ครบ lifecycle</div>
+    <div style="margin-top:5px"><span class="pr p2">P2 High</span></div>
+  </td>
+  <td><span class="b bp">Plugin</span></td>
+  <td><div class="pop pop-hi">16.8k<span class="pop-src">GitHub ⭐ *</span></div></td>
+  <td style="font-size:11.5px">Anthropic</td>
+  <td><a href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins">claude-plugins-official/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins">Anthropic First-Party Plugin</a>
+    <span class="sec-note">Built &amp; maintained โดย Anthropic โดยตรง, ไม่มี external dependencies</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 5 code-review Plugin — 16.8k -->
+<tr>
+  <td><div class="rn">5</div></td>
+  <td>
+    <div class="tn">👀 code-review Plugin</div>
+    <div class="td">Anthropic official — automated code review ตรวจ security, performance, correctness พร้อม diff view</div>
+    <div style="margin-top:5px"><span class="pr p2">P2 High</span></div>
+  </td>
+  <td><span class="b bp">Plugin</span></td>
+  <td><div class="pop pop-hi">16.8k<span class="pop-src">GitHub ⭐ *</span></div></td>
+  <td style="font-size:11.5px">Anthropic</td>
+  <td><a href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins">claude-plugins-official/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins">Anthropic First-Party Plugin</a>
+    <span class="sec-note">Built &amp; maintained โดย Anthropic โดยตรง</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 6 claude-md-management Plugin — 16.8k -->
+<tr>
+  <td><div class="rn">6</div></td>
+  <td>
+    <div class="tn">📄 claude-md-management Plugin</div>
+    <div class="td">Anthropic official — อัปเดต CLAUDE.md อัตโนมัติ เหมาะสำหรับ Context Engineering workflow</div>
+    <div style="margin-top:5px"><span class="pr p2">P2 High</span></div>
+  </td>
+  <td><span class="b bp">Plugin</span></td>
+  <td><div class="pop pop-hi">16.8k<span class="pop-src">GitHub ⭐ *</span></div></td>
+  <td style="font-size:11.5px">Anthropic</td>
+  <td><a href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins">claude-plugins-official/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins">Anthropic First-Party Plugin</a>
+    <span class="sec-note">Built &amp; maintained โดย Anthropic โดยตรง</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 7 hookify Plugin — 16.8k -->
+<tr>
+  <td><div class="rn">7</div></td>
+  <td>
+    <div class="tn">🪝 hookify Plugin</div>
+    <div class="td">Anthropic official — จัดการ git hooks อัตโนมัติ pre-commit, pre-push, lint, test</div>
+    <div style="margin-top:5px"><span class="pr p3">P3 Medium</span></div>
+  </td>
+  <td><span class="b bp">Plugin</span></td>
+  <td><div class="pop pop-hi">16.8k<span class="pop-src">GitHub ⭐ *</span></div></td>
+  <td style="font-size:11.5px">Anthropic</td>
+  <td><a href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins">claude-plugins-official/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins">Anthropic First-Party Plugin</a>
+    <span class="sec-note">Built &amp; maintained โดย Anthropic โดยตรง</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 8 commit-commands Plugin — 16.8k -->
+<tr>
+  <td><div class="rn">8</div></td>
+  <td>
+    <div class="tn">💬 commit-commands Plugin</div>
+    <div class="td">Anthropic official — Conventional Commits standard, auto-message generation, commit workflow</div>
+    <div style="margin-top:5px"><span class="pr p3">P3 Medium</span></div>
+  </td>
+  <td><span class="b bp">Plugin</span></td>
+  <td><div class="pop pop-hi">16.8k<span class="pop-src">GitHub ⭐ *</span></div></td>
+  <td style="font-size:11.5px">Anthropic</td>
+  <td><a href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins">claude-plugins-official/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins">Anthropic First-Party Plugin</a>
+    <span class="sec-note">Built &amp; maintained โดย Anthropic โดยตรง</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 9 code-simplifier Plugin — 16.8k -->
+<tr>
+  <td><div class="rn">9</div></td>
+  <td>
+    <div class="tn">✂️ code-simplifier Plugin</div>
+    <div class="td">Anthropic official — refactor โค้ดให้ readable ลด complexity, code quality improvement</div>
+    <div style="margin-top:5px"><span class="pr p4">P4 Nice</span></div>
+  </td>
+  <td><span class="b bp">Plugin</span></td>
+  <td><div class="pop pop-hi">16.8k<span class="pop-src">GitHub ⭐ *</span></div></td>
+  <td style="font-size:11.5px">Anthropic</td>
+  <td><a href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins">claude-plugins-official/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins">Anthropic First-Party Plugin</a>
+    <span class="sec-note">Built &amp; maintained โดย Anthropic โดยตรง</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 10 frontend-design Plugin — 16.8k -->
+<tr>
+  <td><div class="rn">10</div></td>
+  <td>
+    <div class="tn">🎨 frontend-design Plugin</div>
+    <div class="td">Anthropic official — guided frontend UI/UX development, component planning, design-to-code</div>
+    <div style="margin-top:5px"><span class="pr p3">P3 Medium</span></div>
+  </td>
+  <td><span class="b bp">Plugin</span></td>
+  <td><div class="pop pop-hi">16.8k<span class="pop-src">GitHub ⭐ *</span></div></td>
+  <td style="font-size:11.5px">Anthropic</td>
+  <td><a href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins">claude-plugins-official/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins">Anthropic First-Party Plugin</a>
+    <span class="sec-note">Built &amp; maintained โดย Anthropic โดยตรง</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 11 Notion MCP — 4.2k -->
+<tr>
+  <td><div class="rn">11</div></td>
+  <td>
+    <div class="tn">📓 Notion MCP <span style="font-size:10px;color:var(--green);font-weight:600">(แทน Kali Linux MCP)</span></div>
+    <div class="td">Knowledge &amp; wiki management — search, read, update Notion pages จาก Claude เหมาะกับ Tech Education knowledge base</div>
+    <div style="margin-top:5px"><span class="pr p2">P2 High</span></div>
+  </td>
+  <td><span class="b bm">MCP Server</span></td>
+  <td><div class="pop pop-md">4.2k<span class="pop-src">GitHub ⭐</span></div></td>
+  <td style="font-size:11.5px">Notion (makenotion)</td>
+  <td><a href="https://github.com/makenotion/claude-code-notion-plugin">claude-code-notion-plugin</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/makenotion/notion-mcp-server">makenotion/notion-mcp-server</a>
+    <span class="sec-note">OAuth 2.0 + PKCE mandatory, granular permission control, official Notion, ไม่พบ CVE</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 12 Cloudflare MCP — 3.6k -->
+<tr>
+  <td><div class="rn">12</div></td>
+  <td>
+    <div class="tn">☁️ Cloudflare MCP <span style="font-size:10px;color:var(--green);font-weight:600">(แทน Atlassian ที่ติดตั้งแล้ว)</span></div>
+    <div class="td">Edge deployment &amp; Workers management — จัดการ DNS, Workers, Pages, R2 Storage, KV จาก Claude เหมาะกับ SaaS deployment</div>
+    <div style="margin-top:5px"><span class="pr p3">P3 Medium</span></div>
+  </td>
+  <td><span class="b bm">MCP Server</span></td>
+  <td><div class="pop pop-md">3.6k<span class="pop-src">GitHub ⭐</span></div></td>
+  <td style="font-size:11.5px">Cloudflare</td>
+  <td><a href="https://github.com/cloudflare/mcp-server-cloudflare">cloudflare/mcp-server-cloudflare</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/cloudflare/mcp-server-cloudflare">Cloudflare Official MCP Repo</a>
+    <span class="sec-note">Official Cloudflare open-source, API token scoped access, ไม่พบ CVE</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 13 Supabase MCP — 2.6k -->
+<tr>
+  <td><div class="rn">13</div></td>
+  <td>
+    <div class="tn">⚡ Supabase MCP</div>
+    <div class="td">Backend-as-a-Service — database, auth, storage, functions จาก Claude เหมาะกับ Micro SaaS</div>
+    <div style="margin-top:5px"><span class="pr p2">P2 High</span></div>
+  </td>
+  <td><span class="b bm">MCP Server</span></td>
+  <td><div class="pop pop-md">2.6k<span class="pop-src">GitHub ⭐</span></div></td>
+  <td style="font-size:11.5px">Supabase</td>
+  <td><a href="https://claude.com/plugins">claude.com/plugins</a></td>
+  <td>
+    <span class="b bcw">⚠️ Safe w/ config</span>
+    <a class="sec-link" href="https://www.pomerium.com/blog/when-ai-has-root-lessons-from-the-supabase-mcp-data-leak">Pomerium: Supabase MCP data leak analysis</a>
+    <span class="sec-note">ต้องใช้ anon key + เปิด RLS เสมอ ห้ามใช้ service_role key กับ MCP</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 14 Terraform MCP — 1.3k -->
+<tr>
+  <td><div class="rn">14</div></td>
+  <td>
+    <div class="tn">🏗 Terraform MCP</div>
+    <div class="td">Infrastructure as Code — plan/apply Terraform configs, จัดการ cloud infra ได้จาก Claude</div>
+    <div style="margin-top:5px"><span class="pr p4">P4 Nice</span></div>
+  </td>
+  <td><span class="b bm">MCP Server</span></td>
+  <td><div class="pop pop-md">1.3k<span class="pop-src">GitHub ⭐</span></div></td>
+  <td style="font-size:11.5px">HashiCorp</td>
+  <td><a href="https://claude.com/plugins">claude.com/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins">Anthropic claude-plugins-official</a>
+    <span class="sec-note">Anthropic-verified partner, ไม่พบ CVE</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 15 Stripe MCP — ~1.2k -->
+<tr>
+  <td><div class="rn">15</div></td>
+  <td>
+    <div class="tn">💳 Stripe MCP</div>
+    <div class="td">Payment integration — payments, subscriptions, invoices เหมาะกับ SaaS/Micro SaaS development</div>
+    <div style="margin-top:5px"><span class="pr p3">P3 Medium</span></div>
+  </td>
+  <td><span class="b bm">MCP Server</span></td>
+  <td><div class="pop pop-md">~1.2k<span class="pop-src">est. installs</span></div></td>
+  <td style="font-size:11.5px">Stripe</td>
+  <td><a href="https://docs.stripe.com/mcp">docs.stripe.com/mcp</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://docs.stripe.com/mcp">Stripe MCP Official Docs</a>
+    <span class="sec-note">Official Stripe, OAuth or restricted API key, recommends human confirmation, ไม่พบ CVE</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 16 enterprise-search Plugin — ~950 -->
+<tr>
+  <td><div class="rn">16</div></td>
+  <td>
+    <div class="tn">🔍 enterprise-search Plugin</div>
+    <div class="td">Cross-tool search — ค้นหาข้อมูลข้าม email, chat, docs, wiki ทุก connected source ในคำสั่งเดียว</div>
+    <div style="margin-top:5px"><span class="pr p3">P3 Medium</span></div>
+  </td>
+  <td><span class="b bp">Plugin</span></td>
+  <td><div class="pop pop-lo">~950<span class="pop-src">est. installs</span></div></td>
+  <td style="font-size:11.5px">Anthropic Marketplace</td>
+  <td><a href="https://claude.com/plugins">claude.com/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://claude.com/plugins">Anthropic Marketplace Verified</a>
+    <span class="sec-note">Anthropic marketplace, quality &amp; safety review, ไม่พบ CVE</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 17 customer-support Plugin — ~720 -->
+<tr>
+  <td><div class="rn">17</div></td>
+  <td>
+    <div class="tn">🎧 customer-support Plugin</div>
+    <div class="td">Triage tickets, draft responses, escalate — เหมาะกับ Tech Education support &amp; learner feedback</div>
+    <div style="margin-top:5px"><span class="pr p4">P4 Nice</span></div>
+  </td>
+  <td><span class="b bp">Plugin</span></td>
+  <td><div class="pop pop-lo">~720<span class="pop-src">est. installs</span></div></td>
+  <td style="font-size:11.5px">Anthropic Marketplace</td>
+  <td><a href="https://claude.com/plugins">claude.com/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://claude.com/plugins">Anthropic Marketplace Verified</a>
+    <span class="sec-note">Anthropic marketplace, quality &amp; safety review, ไม่พบ CVE</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 18 Sentry MCP — 634 -->
+<tr>
+  <td><div class="rn">18</div></td>
+  <td>
+    <div class="tn">🚨 Sentry MCP</div>
+    <div class="td">Error tracking &amp; performance monitoring — stack traces, breadcrumbs, project health ใน Claude workflow</div>
+    <div style="margin-top:5px"><span class="pr p1">P1 Critical</span></div>
+  </td>
+  <td><span class="b bm">MCP Server</span></td>
+  <td><div class="pop pop-lo">634<span class="pop-src">GitHub ⭐</span></div></td>
+  <td style="font-size:11.5px">Sentry (getsentry)</td>
+  <td><a href="https://claude.com/plugins">claude.com/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/getsentry/sentry-mcp">github.com/getsentry/sentry-mcp</a>
+    <span class="sec-note">Official Sentry repo, read-only API access, ไม่พบ CVE ที่เกี่ยวข้อง</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 19 Vercel MCP — ~580 -->
+<tr>
+  <td><div class="rn">19</div></td>
+  <td>
+    <div class="tn">▲ Vercel MCP</div>
+    <div class="td">Deployment management — deploy, preview, domain management, build logs จาก Claude</div>
+    <div style="margin-top:5px"><span class="pr p3">P3 Medium</span></div>
+  </td>
+  <td><span class="b bm">MCP Server</span></td>
+  <td><div class="pop pop-lo">~580<span class="pop-src">est. installs</span></div></td>
+  <td style="font-size:11.5px">Vercel</td>
+  <td><a href="https://claude.com/plugins">claude.com/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins">Anthropic claude-plugins-official</a>
+    <span class="sec-note">Anthropic-verified partner, OAuth-based, ไม่พบ CVE</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 20 Linear MCP — 345 -->
+<tr>
+  <td><div class="rn">20</div></td>
+  <td>
+    <div class="tn">📐 Linear MCP</div>
+    <div class="td">Agile project management — สร้าง/จัดการ issues, sprints, projects แบบ integrated กับ Claude workflow</div>
+    <div style="margin-top:5px"><span class="pr p2">P2 High</span></div>
+  </td>
+  <td><span class="b bm">MCP Server</span></td>
+  <td><div class="pop pop-lo">345<span class="pop-src">GitHub ⭐</span></div></td>
+  <td style="font-size:11.5px">Linear</td>
+  <td><a href="https://claude.com/plugins">claude.com/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://linear.app/docs/mcp">linear.app/docs/mcp</a>
+    <span class="sec-note">Centrally hosted &amp; managed by Linear, OAuth-based, ไม่พบ CVE</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 21 Discord MCP — 260 -->
+<tr>
+  <td><div class="rn">21</div></td>
+  <td>
+    <div class="tn">💬 Discord MCP</div>
+    <div class="td">Community management — ส่งข้อความ, อ่าน channels, จัดการ community สำหรับ tech education</div>
+    <div style="margin-top:5px"><span class="pr p4">P4 Nice</span></div>
+  </td>
+  <td><span class="b bm">MCP Server</span></td>
+  <td><div class="pop pop-lo">260<span class="pop-src">GitHub ⭐</span></div></td>
+  <td style="font-size:11.5px">Community</td>
+  <td><a href="https://claude.com/plugins">claude.com/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins">Anthropic claude-plugins-official</a>
+    <span class="sec-note">Anthropic-verified partner, ไม่พบ CVE</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 22 Firebase MCP — 244 -->
+<tr>
+  <td><div class="rn">22</div></td>
+  <td>
+    <div class="tn">🔥 Firebase MCP</div>
+    <div class="td">Firestore, Auth, Cloud Functions, Hosting — จัดการ Google Firebase ทั้งหมดจาก Claude</div>
+    <div style="margin-top:5px"><span class="pr p2">P2 High</span></div>
+  </td>
+  <td><span class="b bm">MCP Server</span></td>
+  <td><div class="pop pop-lo">244<span class="pop-src">GitHub ⭐</span></div></td>
+  <td style="font-size:11.5px">Firebase / Google</td>
+  <td><a href="https://claude.com/plugins">claude.com/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins">Anthropic claude-plugins-official</a>
+    <span class="sec-note">Anthropic-verified partner plugin, ไม่พบ CVE</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 23 GitLab MCP — ~180 -->
+<tr>
+  <td><div class="rn">23</div></td>
+  <td>
+    <div class="tn">🦊 GitLab MCP</div>
+    <div class="td">GitLab integration — repos, Merge Requests, pipelines, CI/CD ครบบน GitLab</div>
+    <div style="margin-top:5px"><span class="pr p3">P3 Medium</span></div>
+  </td>
+  <td><span class="b bm">MCP Server</span></td>
+  <td><div class="pop pop-lo">~180<span class="pop-src">est. installs</span></div></td>
+  <td style="font-size:11.5px">GitLab</td>
+  <td><a href="https://claude.com/plugins">claude.com/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins">Anthropic claude-plugins-official</a>
+    <span class="sec-note">Anthropic-verified partner, ไม่พบ CVE</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 24 Asana MCP — 137 -->
+<tr>
+  <td><div class="rn">24</div></td>
+  <td>
+    <div class="tn">✅ Asana MCP <span style="font-size:10px;color:var(--green);font-weight:600">(แทน Context7)</span></div>
+    <div class="td">Project &amp; task management — สร้าง/อ่าน/อัปเดต tasks, projects, workspaces ใน Asana จาก Claude โดยตรง</div>
+    <div style="margin-top:5px"><span class="pr p2">P2 High</span></div>
+  </td>
+  <td><span class="b bm">MCP Server</span></td>
+  <td><div class="pop pop-lo">137<span class="pop-src">GitHub ⭐</span></div></td>
+  <td style="font-size:11.5px">Asana</td>
+  <td><a href="https://developers.asana.com/docs/using-asanas-mcp-server">developers.asana.com</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://developers.asana.com/docs/integrating-with-asanas-mcp-server">Asana MCP Security Docs</a>
+    <span class="sec-note">OAuth 2.0, token blast-radius ถูก contain ตาม permission level ผู้ใช้ ใช้ V2 server ก่อน 05/11/2026</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
+<!-- 25 Greptile MCP — ~90 -->
+<tr>
+  <td><div class="rn">25</div></td>
+  <td>
+    <div class="tn">🔎 Greptile MCP</div>
+    <div class="td">Code intelligence — semantic search ทั้ง codebase เข้าใจ context ของโค้ดทั้งหมดได้ ใช้กับ large repos</div>
+    <div style="margin-top:5px"><span class="pr p2">P2 High</span></div>
+  </td>
+  <td><span class="b bm">MCP Server</span></td>
+  <td><div class="pop pop-lo">~90<span class="pop-src">est. installs</span></div></td>
+  <td style="font-size:11.5px">Greptile</td>
+  <td><a href="https://claude.com/plugins">claude.com/plugins</a></td>
+  <td>
+    <span class="b bsf">✅ Safe</span>
+    <a class="sec-link" href="https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins">Anthropic claude-plugins-official</a>
+    <span class="sec-note">Anthropic-verified partner, read-only code access, ไม่พบ CVE</span>
+  </td>
+  <td><span class="b bne">✅ Installed</span></td>
+</tr>
+
         </tbody>
       </table>
-    </section>
+    </div>
 
-    <section>
-      <h3>Priority Grid (P1 → P4)</h3>
-      <div class="prio-grid">
-        <div class="prio p1">
-          <div class="hdr"><span class="label">P1 — Critical</span><span class="count">8 items</span></div>
-          <ul>
-            <li><span class="idx">01</span>GitHub MCP Server</li>
-            <li><span class="idx">02</span>Playwright MCP Server</li>
-            <li><span class="idx">03</span>Supabase MCP Server</li>
-            <li><span class="idx">04</span>Sentry MCP Server</li>
-            <li><span class="idx">05</span>Stripe MCP Server</li>
-            <li><span class="idx">06</span>Linear MCP Server</li>
-            <li><span class="idx">07</span>Vercel MCP Server</li>
-            <li><span class="idx">08</span>Context7 MCP Server</li>
-          </ul>
-        </div>
-        <div class="prio p2">
-          <div class="hdr"><span class="label">P2 — High</span><span class="count">8 items</span></div>
-          <ul>
-            <li><span class="idx">09</span>ship plugin</li>
-            <li><span class="idx">10</span>Claude-Mem plugin</li>
-            <li><span class="idx">11</span>Ralph Loop plugin</li>
-            <li><span class="idx">12</span>gstack</li>
-            <li><span class="idx">13</span>MCP Builder skill</li>
-            <li><span class="idx">14</span>simplify skill</li>
-            <li><span class="idx">15</span>Claude API skill</li>
-            <li><span class="idx">16</span>Frontend Design skill</li>
-          </ul>
-        </div>
-        <div class="prio p3">
-          <div class="hdr"><span class="label">P3 — Medium</span><span class="count">6 items</span></div>
-          <ul>
-            <li><span class="idx">17</span>Firebase MCP</li>
-            <li><span class="idx">18</span>Notion MCP</li>
-            <li><span class="idx">19</span>HubSpot MCP</li>
-            <li><span class="idx">20</span>Shopify MCP</li>
-            <li><span class="idx">21</span>Apify MCP</li>
-            <li><span class="idx">22</span>Octoparse MCP</li>
-          </ul>
-        </div>
-        <div class="prio p4">
-          <div class="hdr"><span class="label">P4 — Nice-to-have</span><span class="count">3 items</span></div>
-          <ul>
-            <li><span class="idx">23</span>Zapier MCP</li>
-            <li><span class="idx">24</span>Composio connect-apps</li>
-            <li><span class="idx">25</span>daymade skills marketplace</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <p class="fn">* Anthropic first-party plugins ใช้ repo เดียวกัน (<a href="https://github.com/anthropics/claude-plugins-official">anthropics/claude-plugins-official</a>) — ⭐ 16.8k คือ stars ของ repo รวม ไม่ใช่ของ plugin แต่ละตัว · ตัวเลข "est. installs" คือประมาณการจาก marketplace/ecosystem data · ข้อมูล GitHub ⭐ ดึงจาก GitHub API เมื่อ 16 Apr 2026</p>
 
-    <section>
-      <h3>Environment Snapshot (Already Installed — Excluded from Top 25)</h3>
-      <div class="snapshot">
-        <div class="snap">
-          <h4>MCP Servers Connected</h4>
-          <ul>
-            <li><span class="pill">Slack</span><span class="pill">Gmail</span><span class="pill">Google Calendar</span></li>
-            <li><span class="pill">Atlassian (Jira + Confluence)</span><span class="pill">Figma</span></li>
-            <li><span class="pill">Canva</span><span class="pill">Desktop Commander</span><span class="pill">Claude in Chrome</span></li>
-            <li><span class="pill">Control Chrome</span><span class="pill">Control Mac (osascript)</span></li>
-            <li><span class="pill">PDF Tools</span><span class="pill">PowerPoint</span><span class="pill">Word</span></li>
-            <li><span class="pill">Apple Notes</span><span class="pill">Spotify</span><span class="pill">Cowork</span></li>
-            <li><span class="pill">MCP Registry</span><span class="pill">Plugins Registry</span><span class="pill">Scheduled Tasks</span></li>
-          </ul>
-        </div>
-        <div class="snap">
-          <h4>Skills Available</h4>
-          <ul>
-            <li><span class="pill">pptx</span><span class="pill">xlsx</span><span class="pill">docx</span><span class="pill">pdf</span></li>
-            <li><span class="pill">elite-presentation-architect</span><span class="pill">doc-coauthoring</span></li>
-            <li><span class="pill">scr-framework</span><span class="pill">prompt-optimizer</span><span class="pill">skill-creator</span></li>
-            <li><span class="pill">workflow-transformer</span><span class="pill">ncbs-qa-review</span><span class="pill">natty-update-doc</span></li>
-            <li><span class="pill">consolidate-memory</span><span class="pill">schedule</span><span class="pill">setup-cowork</span></li>
-            <li><span class="pill">skill-plugin-mcp-selector</span><span class="pill">updated-docs-on-github</span></li>
-          </ul>
-        </div>
-        <div class="snap">
-          <h4>Plugins Installed</h4>
-          <ul>
-            <li><span class="pill">slack-by-salesforce</span><span class="pill">design</span><span class="pill">engineering</span></li>
-            <li><span class="pill">marketing</span><span class="pill">finance</span><span class="pill">product-management</span></li>
-            <li><span class="pill">productivity</span><span class="pill">enterprise-search</span></li>
-            <li><span class="pill">cowork-plugin-management</span><span class="pill">skill-plugin-mcp-selector</span></li>
-            <li><span class="pill">updated-docs-on-github</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h3>Security Audit Notes</h3>
-      <div class="snap" style="margin-top:4px;">
-        <ul style="color:var(--text-sec); font-size:13px;">
-          <li>✅ <strong style="color:var(--text);">Context7 ContextCrush</strong> (no CVE, tool-poisoning disclosure) — patched on production <strong>2026-02-23</strong> by Upstash with rule sanitization &amp; guardrails (<a href="https://noma.security/blog/contextcrush-context7-the-mcp-server-vulnerability/" target="_blank">Noma Security</a>). No evidence of wild exploitation. Safe to install.</li>
-          <li>✅ <strong style="color:var(--text);">aws-mcp-server (CVE-2026-5058)</strong> — NOT in today's list; excluded as precaution.</li>
-          <li>✅ <strong style="color:var(--text);">MCPJam Inspector (CVE-2026-23744)</strong> — NOT in today's list; excluded as precaution.</li>
-          <li>✅ <strong style="color:var(--text);">nginx-ui (CVE-2026-33032)</strong> — unrelated to MCP ecosystem; noted for infra awareness.</li>
-          <li>✅ All 25 tools pass: no DNS rebinding, no prompt injection surface, no auth bypass, no data-leak advisories, no supply-chain red flags as of <strong>2026-04-16</strong>.</li>
+    <!-- Priority grid -->
+    <div class="sh">🚀 Installation Priority</div>
+    <div class="pg">
+      <div class="pb pb1">
+        <h3><span class="pr p1">P1 Critical</span></h3>
+        <ul>
+          <li>🎭 Playwright MCP — E2E testing (30.8k ⭐, patched v0.0.40+)</li>
+          <li>🐙 GitHub MCP — Code repos &amp; PRs (28.8k ⭐, patched Dec 2025)</li>
+          <li>🚨 Sentry MCP — Error tracking (634 ⭐)</li>
         </ul>
       </div>
-    </section>
+      <div class="pb pb2">
+        <h3><span class="pr p2">P2 High</span></h3>
+        <ul>
+          <li>📓 Notion MCP — Knowledge base (4.2k ⭐, OAuth2+PKCE)</li>
+          <li>⚡ Supabase MCP — Backend-as-a-Service (2.6k ⭐, ใช้ anon key + RLS)</li>
+          <li>📐 Linear MCP — Agile PM (345 ⭐)</li>
+          <li>🔥 Firebase MCP (244 ⭐)</li>
+          <li>✅ Asana MCP — Task management (137 ⭐)</li>
+          <li>🔎 Greptile MCP — Code intelligence (~90)</li>
+          <li>🛠 feature-dev · 👀 code-review · 📄 claude-md-management (16.8k ⭐*)</li>
+        </ul>
+      </div>
+      <div class="pb pb3">
+        <h3><span class="pr p3">P3 Medium</span></h3>
+        <ul>
+          <li>🐘 PostgreSQL MCP (83.7k ⭐ monorepo)</li>
+          <li>☁️ Cloudflare MCP — Edge &amp; Workers (3.6k ⭐)</li>
+          <li>💳 Stripe MCP (~1.2k)</li>
+          <li>▲ Vercel MCP (~580) · 🦊 GitLab MCP (~180)</li>
+          <li>🪝 hookify · 💬 commit-commands · 🎨 frontend-design (16.8k ⭐*)</li>
+          <li>🔍 enterprise-search (~950)</li>
+        </ul>
+      </div>
+      <div class="pb pb4">
+        <h3><span class="pr p4">P4 Nice-to-have</span></h3>
+        <ul>
+          <li>🏗 Terraform MCP (1.3k ⭐)</li>
+          <li>✂️ code-simplifier (16.8k ⭐*)</li>
+          <li>🎧 customer-support (~720)</li>
+          <li>💬 Discord MCP (260 ⭐)</li>
+        </ul>
+      </div>
+    </div>
 
-    <footer>
-      Generated automatically by <code>daily-skill-plugin-audit</code> scheduled task · 16 Apr 2026 ·
-      <a href="https://thitic9203.github.io/skill-plugin-audit/" target="_blank">View index</a> ·
-      <a href="https://thitic9203.github.io/skill-plugin-audit/latest.html" target="_blank">Latest report</a>
-    </footer>
+    <!-- Current env -->
+    <div class="sh">✅ Current Environment</div>
+    <div class="eb">
+      <h3>MCP Servers ที่เชื่อมต่ออยู่แล้ว</h3>
+      <div class="etags">
+        <span class="et">Slack</span><span class="et">Claude in Chrome</span><span class="et">Desktop Commander</span>
+        <span class="et">Figma</span><span class="et">PDF Tools</span><span class="et">PowerPoint (Anthropic)</span>
+        <span class="et">Word (Anthropic)</span><span class="et">Atlassian Jira+Confluence</span>
+        <span class="et">Google Drive</span><span class="et">Gmail</span><span class="et">Canva</span>
+        <span class="et">Google Calendar</span><span class="et">Spotify</span><span class="et">Apple Notes</span>
+        <span class="et">MCP Registry</span><span class="et">PDF Viewer</span><span class="et">Scheduled Tasks</span>
+      </div>
+    </div>
+    <div class="eb">
+      <h3>Plugins &amp; Custom Skills ที่ติดตั้งแล้ว</h3>
+      <div class="etags">
+        <span class="et">slack-by-salesforce</span><span class="et">engineering (full)</span><span class="et">design (full)</span>
+        <span class="et">marketing (full)</span><span class="et">product-management (full)</span><span class="et">finance (full)</span>
+        <span class="et">productivity (full)</span><span class="et">cowork-plugin-management</span>
+        <span class="et">update-doc-on-github</span><span class="et">skill-plugin-mcp-selector</span>
+        <span class="et">ncbs-qa-review</span><span class="et">natty-update-doc</span><span class="et">workflow-transformer</span>
+        <span class="et">scr-framework</span><span class="et">prompt-optimizer</span><span class="et">elite-presentation-architect</span>
+        <span class="et">doc-coauthoring</span><span class="et">skill-creator</span><span class="et">xlsx / pptx / pdf / docx</span>
+        <span class="et">schedule</span><span class="et">setup-cowork</span>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>🤖 Generated by Natty AI · Daily Skill/Plugin/MCP Audit · 16 April 2026 · All 25 tools installed before this report was sent</p>
+      <span>
+        <a href="https://github.com/anthropics/claude-plugins-official">claude-plugins-official</a> ·
+        <a href="https://github.com/wong2/awesome-mcp-servers">awesome-mcp-servers</a> ·
+        <a href="https://noma.security/blog/contextcrush-context7-the-mcp-server-vulnerability/">Noma Security</a> ·
+        <a href="https://github.com/JLLeitschuh/security-research/security/advisories/GHSA-8rgw-6xp9-2fg3">GHSA-8rgw-6xp9-2fg3</a> ·
+        <a href="https://thehackernews.com/2026/01/three-flaws-in-anthropic-mcp-git-server.html">HackerNews CVE-68143</a> ·
+        <a href="https://www.pomerium.com/blog/when-ai-has-root-lessons-from-the-supabase-mcp-data-leak">Pomerium Supabase</a>
+      </span>
+    </div>
+
   </div>
 </div>
-</body>
-</html>
+
+
+</body></html>
